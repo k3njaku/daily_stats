@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scalemill Daily Stats</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #scalemill-logo {
+            width: 200px; /* Increased size for Scalemill logo */
+            margin-top: 50px;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        #heading {
+            font-size: 2.5em;
+            margin: 20px;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .logos-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 800px;
+            margin: 20px;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .logo {
+            width: 150px; /* Increased size for other logos */
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scalemill Logo -->
+    <img id="scalemill-logo" src="scalemill_logo.png" alt="Scalemill Logo">
+
+    <!-- Heading -->
+    <h1 id="heading">Daily Stats</h1>
+
+    <!-- Logos in a 2-line grid -->
+    <div class="logos-container" id="logos-container">
+        <img class="logo" src="avibra_logo.webp" alt="Avibra Logo">
+        <img class="logo" src="canopy_logo.png" alt="Canopy Connect Logo">
+        <img class="logo" src="fpa_logo.png" alt="FP&A Logo">
+        <img class="logo" src="illumin_logo.png" alt="Illumin Logo">
+        <img class="logo" src="Payactiv_logo.webp" alt="Payactiv Logo">
+        <img class="logo" src="payoneer_logo.webp" alt="Payoneer Logo">
+        <img class="logo" src="Puredome_logo.webp" alt="Puredome Logo">
+        <img class="logo" src="pureversity_logo.png" alt="Pureversity Logo">
+        <img class="logo" src="PureVPN_logo.png" alt="PureVPN Logo">
+    </div>
+
+    <script>
+        // Animation sequence
+        window.onload = function() {
+            // Animate Scalemill logo
+            document.getElementById("scalemill-logo").style.opacity = 1;
+
+            // Delay for heading
+            setTimeout(function() {
+                document.getElementById("heading").style.opacity = 1;
+            }, 1000);
+
+            // Delay for logos, making container visible and fading logos one by one
+            setTimeout(function() {
+                document.getElementById("logos-container").style.opacity = 1;
+            }, 1500);
+        };
+    </script>
+
+</body>
+</html>

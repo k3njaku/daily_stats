@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoneer Stats</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+        }
+        #payoneer-logo {
+            width: 220px;
+            margin-top: 30px;
+        }
+        .table-container {
+            width: 100%;
+            max-width: 800px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .table-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .table-header {
+            background-color: #FF4500;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            font-size: 1.2em;
+        }
+        .table-header-monthly {
+            background-color: #FF00FF;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            font-size: 1.2em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        #chart-container, #chart-container-2 {
+            width: 80%;
+            max-width: 600px;
+            margin: 40px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        #chart-container.visible, #chart-container-2.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Payoneer Logo as Heading -->
+    <img id="payoneer-logo" src="payoneer_logo.webp" alt="Payoneer Logo">
+
+    <!-- Daily Table -->
+    <div class="table-container" id="daily-table">
+        <div class="table-header">
+            12-Nov-2024<br>Payoneer Daily
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="color: black;">SDR</th>
+                    <th>Dials</th>
+                    <th>Connected</th>
+                    <th>Handle Time</th>
+                    <th>Appointments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mehwish</td>
+                    <td>63</td>
+                    <td>34</td>
+                    <td>1:02:29</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Maryam</td>
+                    <td>81</td>
+                    <td>34</td>
+                    <td>0:30:34</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Monthly Table -->
+    <div class="table-container" id="monthly-table">
+        <div class="table-header-monthly">
+            November<br>Payoneer Monthly
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="color: black;">SDR</th>
+                    <th>Dials</th>
+                    <th>Connected</th>
+                    <th>Handle Time</th>
+                    <th>Appointments</th>
+                    <th>Showups</th>
+                    <th>Showup%</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Maryam</td>
+                    <td>520</td>
+                    <td>232</td>
+                    <td>5:24:24</td>
+                    <td>15</td>
+                    <td>12</td>
+                    <td>80.00%</td>
+                </tr>
+                <tr>
+                    <td>Mehwish</td>
+                    <td>691</td>
+                    <td>304</td>
+                    <td>7:04:39</td>
+                    <td>13</td>
+                    <td>12</td>
+                    <td>92.31%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- First Chart Container -->
+    <div id="chart-container">
+        <canvas id="dialsChart"></canvas>
+    </div>
+
+    <!-- Second Chart Container -->
+    <div id="chart-container-2">
+        <canvas id="successChart"></canvas>
+    </div>
+
+    <script>
+        // Initial Chart.js configuration for the first chart
+        let dialsChart;
+
+        function createDialsChart() {
+            const ctx = document.getElementById('dialsChart').getContext('2d');
+            dialsChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Maryam', 'Mehwish'],
+                    datasets: [
+                        {
+                            label: 'Dials',
+                            data: [520, 691],
+                            backgroundColor: '#FF4500',
+                        },
+                        {
+                            label: 'Connected',
+                            data: [232, 304],
+                            backgroundColor: '#1E90FF',
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Activities',
+                            font: {
+                                size: 18,
+                                weight: 'bold',
+                            },
+                            padding: {
+                                top: 10,
+                                bottom: 10,
+                            },
+                            align: 'center',
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 800
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initial Chart.js configuration for the second chart
+        let successChart;
+
+        function createSuccessChart() {
+            const ctx = document.getElementById('successChart').getContext('2d');
+            successChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Maryam', 'Mehwish'],
+                    datasets: [
+                        {
+                            label: 'Appointments',
+                            data: [15, 13],
+                            backgroundColor: '#1E90FF',
+                        },
+                        {
+                            label: 'Showups',
+                            data: [12, 12],
+                            backgroundColor: '#FF6347',
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Success',
+                            font: {
+                                size: 18,
+                                weight: 'bold',
+                            },
+                            padding: {
+                                top: 10,
+                                bottom: 10,
+                            },
+                            align: 'center',
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 20
+                        }
+                    }
+                }
+            });
+        }
+
+        function resetDialsChart() {
+            if (dialsChart) {
+                dialsChart.destroy();
+            }
+            createDialsChart();
+        }
+
+        function resetSuccessChart() {
+            if (successChart) {
+                successChart.destroy();
+            }
+            createSuccessChart();
+        }
+
+        // Observer to animate tables and both charts when in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    if (entry.target.id === 'chart-container') {
+                        resetDialsChart();
+                    } else if (entry.target.id === 'chart-container-2') {
+                        resetSuccessChart();
+                    }
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        // Attach observer to tables and both charts
+        document.querySelectorAll('.table-container, #chart-container, #chart-container-2').forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+
+</body>
+</html>
