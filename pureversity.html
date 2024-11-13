@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pureversity Daily & Monthly Report</title>
+    <link rel="stylesheet" href="pureversity.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Pureversity Logo -->
+    <header class="logo-container">
+        <img src="pureversity_logo.png" alt="Pureversity Logo" class="logo">
+    </header>
+
+    <!-- Daily Table -->
+    <section class="table-section">
+        <h2>Daily Report - 12-Nov-2024</h2>
+        <table class="report-table">
+            <thead>
+                <tr>
+                    <th>SDR</th>
+                    <th>Calls</th>
+                    <th>Emails</th>
+                    <th>Task</th>
+                    <th>Appointments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Babar</td>
+                    <td>173</td>
+                    <td>107</td>
+                    <td>76</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Zuhaib</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Monthly Table -->
+    <section class="table-section">
+        <h2>Monthly Report - November</h2>
+        <table class="report-table">
+            <thead>
+                <tr>
+                    <th>SDR</th>
+                    <th>Calls</th>
+                    <th>Emails</th>
+                    <th>Task</th>
+                    <th>Appointments</th>
+                    <th>Showups</th>
+                    <th>Showup%</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Zuhaib</td>
+                    <td>382</td>
+                    <td>424</td>
+                    <td>513</td>
+                    <td>7</td>
+                    <td>5</td>
+                    <td>71.43%</td>
+                </tr>
+                <tr>
+                    <td>Babar</td>
+                    <td>473</td>
+                    <td>533</td>
+                    <td>510</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>0.00%</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Charts -->
+    <section class="chart-section">
+        <h2>Activities</h2>
+        <canvas id="activityChart"></canvas>
+
+        <h2>Success</h2>
+        <canvas id="successChart"></canvas>
+    </section>
+
+    <script src="pureversity.js"></script>
+</body>
+</html>
