@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canopy Connect Stats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #canopy-logo {
+            width: 180px;
+            margin: 20px 0;
+        }
+
+        .table-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 10px;
+            opacity: 1;
+        }
+
+        .table-header-daily,
+        .table-header-monthly {
+            font-weight: bold;
+            color: white;
+            padding: 10px;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .table-header-daily {
+            background-color: #0000FF;
+            /* Blue for Canopy Daily */
+        }
+
+        .table-header-monthly {
+            background-color: #0000FF;
+            /* Blue for Canopy Monthly */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        #chart-container-activities,
+        #chart-container-success {
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- Canopy Connect Logo as Heading -->
+    <img id="canopy-logo" src="canopy_logo.png" alt="Canopy Connect Logo">
+
+    <!-- Daily Table -->
+    <div class="table-container" id="daily-table">
+        <div class="table-header-daily">
+            12-Nov-2024<br>Canopy Daily
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>SDR</th>
+                    <th>Email</th>
+                    <th>Tasks</th>
+                    <th>Calls</th>
+                    <th>Appointments</th>
+                    <th>Showups</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Vivek</td>
+                    <td>0</td>
+                    <td>15</td>
+                    <td>23</td>
+                    <td>1</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Daniyal</td>
+                    <td>22</td>
+                    <td>27</td>
+                    <td>1</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Gareth</td>
+                    <td>122</td>
+                    <td>0</td>
+                    <td>61</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Ibrahim</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>52</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Kurt</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Webster</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>16</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Monthly Table -->
+    <div class="table-container" id="monthly-table">
+        <div class="table-header-monthly">
+            November<br>Canopy Monthly
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>SDR</th>
+                    <th>Email</th>
+                    <th>Tasks</th>
+                    <th>Calls</th>
+                    <th>Appointments</th>
+                    <th>Showups</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Daniyal</td>
+                    <td>296</td>
+                    <td>186</td>
+                    <td>190</td>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Gareth</td>
+                    <td>372</td>
+                    <td>104</td>
+                    <td>338</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Ibrahim</td>
+                    <td>84</td>
+                    <td>4</td>
+                    <td>232</td>
+                    <td>2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Kurt</td>
+                    <td>57</td>
+                    <td>40</td>
+                    <td>0</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Vivek</td>
+                    <td>0</td>
+                    <td>15</td>
+                    <td>23</td>
+                    <td>3</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Webster</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>16</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Activities Chart -->
+    <div id="chart-container-activities">
+        <canvas id="activitiesChart"></canvas>
+    </div>
+
+    <!-- Success Chart -->
+    <div id="chart-container-success">
+        <canvas id="successChart"></canvas>
+    </div>
+
+    <script>
+        function createActivitiesChart() {
+            const ctx = document.getElementById('activitiesChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Daniyal', 'Gareth', 'Ibrahim', 'Kurt', 'Vivek', 'Webster'],
+                    datasets: [
+                        {
+                            label: 'Calls',
+                            data: [190, 338, 232, 0, 23, 16],
+                            backgroundColor: '#0000FF'
+                        },
+                        {
+                            label: 'Email',
+                            data: [296, 372, 84, 57, 0, 0],
+                            backgroundColor: '#FF4500'
+                        },
+                        {
+                            label: 'Tasks',
+                            data: [186, 104, 4, 40, 15, 0],
+                            backgroundColor: '#FFD700'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    animation: {
+                        duration: 1500,
+                        easing: 'easeOutBounce'
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        },
+                        title: {
+                            display: true,
+                            text: 'Dials',
+                            font: {
+                                size: 18,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 400
+                        }
+                    }
+                }
+            });
+        }
+
+        function createSuccessChart() {
+            const ctx = document.getElementById('successChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Daniyal', 'Gareth', 'Ibrahim', 'Kurt', 'Vivek', 'Webster'],
+                    datasets: [
+                        {
+                            label: 'Appointments',
+                            data: [1, 1, 2, 0, 3, 0],
+                            backgroundColor: '#0000FF'
+                        },
+                        {
+                            label: 'Showups',
+                            data: [2, 1, 2, 0, 0, 0],
+                            backgroundColor: '#32CD32'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    animation: {
+                        duration: 1500,
+                        easing: 'easeOutBounce'
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        },
+                        title: {
+                            display: true,
+                            text: 'Appointments/Showups',
+                            font: {
+                                size: 18,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 3
+                        }
+                    }
+                }
+            });
+        }
+
+        window.onload = function () {
+            createActivitiesChart();
+            createSuccessChart();
+        };
+    </script>
+
+</body>
+
+</html>
