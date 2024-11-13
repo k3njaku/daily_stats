@@ -1,6 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
-    createActivityChart();
-    createSuccessChart();
+    const elements = [
+        document.querySelector('.logo-container'),
+        document.querySelectorAll('.table-section')[0],
+        document.querySelectorAll('.table-section')[1],
+        document.getElementById('activityChart').parentElement,
+        document.getElementById('successChart').parentElement
+    ];
+
+    // Function to make elements visible one by one
+    function showElementsInSequence(elements) {
+        elements.forEach((element, index) => {
+            element.classList.add('hidden'); // Add hidden class initially
+
+            setTimeout(() => {
+                element.classList.add('visible');
+                element.classList.remove('hidden');
+            }, index * 1000); // Delay each element by 1 second
+        });
+    }
+
+    showElementsInSequence(elements);
+
+    // Initialize charts only after their containers are visible
+    setTimeout(createActivityChart, 3000); // 3s delay for the first chart
+    setTimeout(createSuccessChart, 4000); // 4s delay for the second chart
 });
 
 function createActivityChart() {

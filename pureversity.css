@@ -12,16 +12,17 @@ body {
     max-width: 200px;
 }
 
-/* Table Styling */
-.table-section {
-    margin: 20px auto;
-    width: 80%;
+/* Table and Chart Section Styling */
+.table-section,
+.chart-section {
+    opacity: 0;
+    transition: opacity 1s ease-in;
 }
 
 .report-table {
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin: 20px auto;
 }
 
 .report-table th,
@@ -38,7 +39,16 @@ body {
 }
 
 /* Chart Section */
+/* Chart Section */
 .chart-section {
-    width: 80%;
-    margin: 20px auto;
+    width: 60%; /* Adjusted to make the chart container smaller */
+    margin: 0 auto;
+}
+
+/* Fade-in Animation */
+.hidden {
+    opacity: 0;
+}
+.visible {
+    opacity: 1;
 }
