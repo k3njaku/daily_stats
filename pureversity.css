@@ -40,17 +40,5 @@ body {
 /* Chart Section */
 .chart-section {
     width: 80%;
-    margin: 0 auto;
-}
-
-/* Fade-in Animation */
-.table-section, .chart-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.table-section.visible, .chart-section.visible {
-    opacity: 1;
-    transform: translateY(0);
+    margin: 20px auto;
 }
