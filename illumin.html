@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illumin Stats</title>
+    <link rel="stylesheet" href="illumin.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Illumin Logo as Heading -->
+    <img id="illumin-logo" src="illumin_logo.png" alt="Illumin Logo">
+
+    <!-- Daily Table -->
+    <div class="table-container" id="daily-table">
+        <div class="table-header-daily">
+            Illumin Daily
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>SDR</th>
+                    <th>Calls</th>
+                    <th>Email</th>
+                    <th>Sched Appt</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hammad Faisal</td>
+                    <td>36</td>
+                    <td>327</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Ahmed Ali</td>
+                    <td>16</td>
+                    <td>213</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Ali Murtaza</td>
+                    <td>23</td>
+                    <td>302</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Amjad Baig</td>
+                    <td>62</td>
+                    <td>0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Khuzaima Tahir</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Monthly Table -->
+    <div class="table-container" id="monthly-table">
+        <div class="table-header-monthly">
+            Illumin Monthly
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>SDR</th>
+                    <th>Calls</th>
+                    <th>Email</th>
+                    <th>Sched Appt</th>
+                    <th>Showups</th>
+                    <th>Opp</th>
+                    <th>No Shows</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hammad Faisal</td>
+                    <td>427</td>
+                    <td>3862</td>
+                    <td>7</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Ali Murtaza</td>
+                    <td>378</td>
+                    <td>4109</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Ahmed Ali</td>
+                    <td>704</td>
+                    <td>1936</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Khuzaima Tahir</td>
+                    <td>63</td>
+                    <td>41</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Amjad Baig</td>
+                    <td>677</td>
+                    <td>170</td>
+                    <td>1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Activity Chart -->
+    <div id="chart-container-activity">
+        <canvas id="activityChart"></canvas>
+    </div>
+
+    <!-- Success Chart -->
+    <div id="chart-container-success">
+        <canvas id="successChart"></canvas>
+    </div>
+
+    <script src="illumin.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+/* Reset some default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+/* Logo styling and animation */
+#illumin-logo {
+    width: 200px;
+    margin: 20px auto;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* Table styling */
+.table-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+#daily-table {
+    animation-delay: 1s;
+}
+
+#monthly-table {
+    animation-delay: 1.5s;
+}
+
+/* Table headers */
+.table-header-daily, .table-header-monthly {
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.table-header-daily {
+    background-color: #333333; /* Dark Gray for Illumin Daily */
+}
+
+.table-header-monthly {
+    background-color: #333333; /* Dark Gray for Illumin Monthly */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Chart containers */
+#chart-container-activity, #chart-container-success {
+    max-width: 800px;
+    margin: 40px auto;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+#chart-container-activity {
+    animation-delay: 2s;
+}
+
+#chart-container-success {
+    animation-delay: 2.5s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll-triggered animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.chart-bar-animation .bar {
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s ease-out;
+}
+
+.chart-bar-animation.visible .bar {
+    transform: scaleY(1);
+}
