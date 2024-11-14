@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureVPN & Puredome Daily & Monthly Report</title>
+    <link rel="stylesheet" href="purevpn.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Heading with Logos -->
+    <header class="logo-container">
+        <img src="PureVPN_logo.png" alt="PureVPN Logo" class="logo">
+        <img src="Puredome_logo.webp" alt="Puredome Logo" class="logo">
+    </header>
+
+    <!-- Daily Table -->
+    <section class="table-section">
+        <h2>Daily Report - 13-Nov-2024</h2>
+        <table class="report-table">
+            <thead>
+                <tr>
+                    <th>SDR</th>
+                    <th>Calls</th>
+                    <th>Connected</th>
+                    <th>Duration</th>
+                    <th>Appointments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sophia</td>
+                    <td>40</td>
+                    <td>13</td>
+                    <td>0:26:15</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Amar</td>
+                    <td>26</td>
+                    <td>3</td>
+                    <td>0:04:48</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Monthly Table -->
+    <section class="table-section">
+        <h2>Monthly Report - November</h2>
+        <table class="report-table">
+            <thead>
+                <tr>
+                    <th>SDR</th>
+                    <th>Calls</th>
+                    <th>Connected</th>
+                    <th>Duration</th>
+                    <th>Appointments</th>
+                    <th>Showups</th>
+                    <th>Showup%</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sophia</td>
+                    <td>492</td>
+                    <td>132</td>
+                    <td>3:55:38</td>
+                    <td>6</td>
+                    <td>5</td>
+                    <td>83.33%</td>
+                </tr>
+                <tr>
+                    <td>Amar</td>
+                    <td>283</td>
+                    <td>61</td>
+                    <td>2:43:00</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>0.00%</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Charts -->
+    <section class="chart-section">
+        <h2>Activities</h2>
+        <canvas id="activityChart"></canvas>
+
+        <h2>Success</h2>
+        <canvas id="successChart"></canvas>
+    </section>
+
+    <script src="purevpn.js"></script>
+</body>
+</html>

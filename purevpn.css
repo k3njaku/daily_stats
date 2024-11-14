@@ -1,0 +1,88 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+    animation-delay: 0.2s; /* Initial delay for logos */
+}
+
+
+.logo {
+    max-width: 300px;
+    margin: 0 10px;
+}
+
+/* Table Styling */
+.table-section {
+    margin: 20px auto;
+    width: 80%;
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.report-table th,
+.report-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Header colors matching chart bars */
+.report-table thead th {
+    background-color: #4a148c; /* Dark purple */
+    color: white;
+}
+
+/* Chart Section */
+.chart-section {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Table and Chart Sections */
+.table-section, .chart-section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+.table-section:nth-of-type(1) {
+    animation-delay: 0.8s; /* Delay for the first table */
+}
+
+.table-section:nth-of-type(2) {
+    animation-delay: 1.4s; /* Delay for the second table */
+}
+
+.chart-section canvas:nth-of-type(1) {
+    animation-delay: 2.0s; /* Delay for the first chart */
+}
+
+.chart-section canvas:nth-of-type(2) {
+    animation-delay: 2.6s; /* Delay for the second chart */
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
