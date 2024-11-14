@@ -52,6 +52,7 @@
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 </head>
 <body>
 
@@ -61,7 +62,7 @@
     <!-- Daily Table -->
     <div class="table-container" id="daily-table">
         <div class="table-header-daily">
-            12-Nov-2024<br>ABCL Daily
+            13-Nov-2024<br>ABCL Daily
         </div>
         <table>
             <thead>
@@ -76,23 +77,23 @@
             <tbody>
                 <tr>
                     <td>Asim</td>
-                    <td>73</td>
-                    <td>43</td>
-                    <td>110</td>
+                    <td>70</td>
+                    <td>83</td>
+                    <td>169</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Iqra</td>
-                    <td>111</td>
-                    <td>150</td>
+                    <td>37</td>
+                    <td>50</td>
                     <td>1</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Usman</td>
-                    <td>27</td>
-                    <td>30</td>
-                    <td>24</td>
+                    <td>65</td>
+                    <td>0</td>
+                    <td>99</td>
                     <td></td>
                 </tr>
             </tbody>
@@ -119,18 +120,18 @@
             <tbody>
                 <tr>
                     <td>Usman</td>
-                    <td>607</td>
-                    <td>189</td>
-                    <td>282</td>
+                    <td>660</td>
+                    <td>207</td>
+                    <td>371</td>
                     <td>4</td>
                     <td>5</td>
                     <td>1</td>
                 </tr>
                 <tr>
                     <td>Asim</td>
-                    <td>549</td>
-                    <td>409</td>
-                    <td>783</td>
+                    <td>609</td>
+                    <td>491</td>
+                    <td>903</td>
                     <td>2</td>
                     <td>2</td>
                     <td></td>
@@ -138,7 +139,7 @@
                 <tr>
                     <td>Iqra</td>
                     <td>635</td>
-                    <td>465</td>
+                    <td>515</td>
                     <td>484</td>
                     <td>2</td>
                     <td></td>
@@ -168,17 +169,17 @@
                     datasets: [
                         {
                             label: 'Dials',
-                            data: [607, 549, 635],
+                            data: [660, 609, 635],
                             backgroundColor: '#1E90FF'
                         },
                         {
                             label: 'Email',
-                            data: [189, 409, 465],
+                            data: [207, 491, 515],
                             backgroundColor: '#FF6347'
                         },
                         {
                             label: 'Tasks',
-                            data: [282, 783, 484],
+                            data: [371, 903, 484],
                             backgroundColor: '#FFD700'
                         }
                     ]
@@ -201,15 +202,22 @@
                                 size: 18,
                                 weight: 'bold'
                             }
+                        },
+                        datalabels: {
+                            anchor: 'end',
+                            align: 'top',
+                            formatter: (value) => value,
+                            color: 'black'
                         }
                     },
                     scales: {
                         y: {
                             beginAtZero: true,
-                            max: 800
+                            max: 1000
                         }
                     }
-                }
+                },
+                plugins: [ChartDataLabels]
             });
         }
 
@@ -229,6 +237,11 @@
                             label: 'Showups',
                             data: [5, 2, 0],
                             backgroundColor: '#32CD32'
+                        },
+                        {
+                            label: 'Opps',
+                            data: [1, 0, 0],
+                            backgroundColor: '#FFA500'
                         }
                     ]
                 },
@@ -250,6 +263,12 @@
                                 size: 18,
                                 weight: 'bold'
                             }
+                        },
+                        datalabels: {
+                            anchor: 'end',
+                            align: 'top',
+                            formatter: (value) => value,
+                            color: 'black'
                         }
                     },
                     scales: {
@@ -258,7 +277,8 @@
                             max: 5
                         }
                     }
-                }
+                },
+                plugins: [ChartDataLabels]
             });
         }
 
