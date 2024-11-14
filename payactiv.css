@@ -1,0 +1,114 @@
+/* Set a fixed size for the table container with always-visible scrollbars */
+.table-container {
+    width: 80%; /* Adjust width as needed */
+    height: 400px; /* Adjust height as needed */
+    overflow-x: scroll; /* Forces horizontal scrollbar */
+    overflow-y: scroll; /* Forces vertical scrollbar */
+    margin: 0 auto; /* Center the table container */
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+/* Ensure table occupies full width */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensures consistent column width */
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    word-wrap: break-word; /* Allow long text to wrap */
+    white-space: normal; /* Allow wrapping of text */
+}
+
+/* Header cell specific styling */
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #007acc;
+    color: #ffffff;
+    font-weight: bold;
+    z-index: 1;
+    padding: 15px; /* Increase padding to avoid overlapping */
+    word-wrap: break-word; /* Allow wrapping for long header text */
+    white-space: normal; /* Allow text wrapping */
+    height: auto; /* Allow height to expand based on content */
+}
+
+
+/* Alternating row colors for better readability */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Stack cells vertically for very small screens */
+    table tbody, table thead {
+        display: block;
+    }
+
+    table th, table td {
+        padding: 10px;
+        min-width: 120px;
+        text-align: center;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 480px) {
+    table th, table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+/* Freeze the first column */
+table td:first-child, table th:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #ffffff; /* Set a background to avoid overlap issues */
+    z-index: 2; /* Keep above other cells */
+}
+
+/* Adjust the header first cell */
+thead th:first-child {
+    z-index: 3; /* Higher z-index for the header cell */
+    background-color: #007acc; /* Match header background color */
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Grand total row styling for separate table */
+.grand-total-container {
+    width: 80%;
+    margin: 5px auto;
+}
+
+.grand-total-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+.grand-total-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+/* Flourish charts spacing */
+.flourish-embed {
+    margin-top: 20px; /* Adjust the value as needed */
+}
