@@ -10,8 +10,8 @@ function createActivityChart() {
         data: {
             labels: ['Sophia', 'Amar'],
             datasets: [
-                { label: 'Calls', data: [492, 283], backgroundColor: '#4a148c' },
-                { label: 'Connected', data: [132, 61], backgroundColor: '#9575cd' }
+                { label: 'Calls', data: [556, 317], backgroundColor: '#4a148c' },
+                { label: 'Connected', data: [160, 72], backgroundColor: '#9575cd' }
             ]
         },
         options: {
@@ -34,8 +34,8 @@ function createSuccessChart() {
         data: {
             labels: ['Sophia', 'Amar'],
             datasets: [
-                { label: 'Appointments', data: [6, 3], backgroundColor: '#4dd0e1' },
-                { label: 'Showups', data: [5, 0], backgroundColor: '#8bc34a' }
+                { label: 'Appointments', data: [6, 5], backgroundColor: '#4dd0e1' },
+                { label: 'Showups', data: [6, 2], backgroundColor: '#8bc34a' }
             ]
         },
         options: {
