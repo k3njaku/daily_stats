@@ -47,14 +47,14 @@ function createActivityChart() {
             datasets: [
                 {
                     label: 'Calls',
-                    data: [427, 378, 704, 63, 677],
+                    data: [611, 453, 756, 59, 871],
                     backgroundColor: '#8A2BE2',
                     barThickness: 'flex',
                     barPercentage: 0.7,
                 },
                 {
                     label: 'Email',
-                    data: [3862, 4109, 1936, 41, 170],
+                    data: [4770, 4973, 2745, 44, 170],
                     backgroundColor: '#FF6347',
                     barThickness: 'flex',
                     barPercentage: 0.7,
@@ -67,6 +67,11 @@ function createActivityChart() {
                 legend: {
                     display: true,
                     position: 'top',
+                    labels: {
+                        font: {
+                            weight: 'bold' // Make legend labels bold
+                        }
+                    }
                 },
                 title: {
                     display: true,
@@ -76,13 +81,28 @@ function createActivityChart() {
                         weight: 'bold',
                     },
                 },
+                datalabels: {
+                    anchor: 'end', // Position at the end of the bar
+                    align: 'top', // Align label outside or at the edge of the bar
+                    color: 'black',
+                    font: {
+                        size: 12, // Set font size for readability
+                        weight: 'bold' // Make labels bold
+                    },
+                    formatter: function(value, context) {
+                        return value; // Show the value as is
+                    }
+                }
             },
             scales: {
                 y: {
                     beginAtZero: true,
-                    max: 5000,
+                    max: 5000, // Adjusted to accommodate max email value
                     ticks: {
                         stepSize: 1000,
+                        font: {
+                            weight: 'bold' // Make y-axis labels bold
+                        }
                     },
                     animations: {
                         y: {
@@ -91,14 +111,26 @@ function createActivityChart() {
                         },
                     },
                 },
+                x: {
+                    ticks: {
+                        font: {
+                            weight: 'bold' // Make x-axis labels bold
+                        }
+                    }
+                }
             },
             animation: {
                 duration: 1500,
                 easing: 'easeOutQuart',  // Smooth rising effect
             },
         },
+        plugins: [ChartDataLabels] // Activate Chart.js Data Labels plugin
     });
 }
+
+
+
+
 
 
 // Function to create the Success Chart
@@ -107,26 +139,33 @@ function createSuccessChart() {
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Hammad Faisal', 'Ali Murtaza', 'Ahmed Ali', 'Khuzaima Tahir', 'Amjad Baig'],
+            labels: ['Hammad Faisal', 'Ali Murtaza', 'Ahmed Ali', 'Amjad Baig', 'Khuzaima Tahir'],
             datasets: [
                 {
                     label: 'Sched Appt',
-                    data: [7, 4, 1, 1, 1],
+                    data: [9, 4, 1, 1, 1],
                     backgroundColor: '#FFD700',
                     barThickness: 'flex',
                     barPercentage: 0.7,
                 },
                 {
                     label: 'Showups',
-                    data: [3, 2, 1, 1, 1],
+                    data: [8, 3, 1, 0, 1],
                     backgroundColor: '#32CD32',
                     barThickness: 'flex',
                     barPercentage: 0.7,
                 },
                 {
                     label: 'Opp',
-                    data: [2, 1, 0, 0, 0],
+                    data: [4, 2, 0, 0, 0],
                     backgroundColor: '#228B22',
+                    barThickness: 'flex',
+                    barPercentage: 0.7,
+                },
+                {
+                    label: 'No Shows',
+                    data: [1, 0, 0, 0, 0],
+                    backgroundColor: '#DC143C',
                     barThickness: 'flex',
                     barPercentage: 0.7,
                 }
@@ -138,6 +177,11 @@ function createSuccessChart() {
                 legend: {
                     display: true,
                     position: 'top',
+                    labels: {
+                        font: {
+                            weight: 'bold' // Make legend labels bold
+                        }
+                    }
                 },
                 title: {
                     display: true,
@@ -147,27 +191,49 @@ function createSuccessChart() {
                         weight: 'bold',
                     },
                 },
+                datalabels: {
+                    anchor: 'end',
+                    align: 'end',
+                    color: 'black',
+                    font: {
+                        size: 12,
+                        weight: 'bold'
+                    }
+                }
             },
             scales: {
                 y: {
                     beginAtZero: true,
-                    max: 8,
+                    max: 10,
                     ticks: {
                         stepSize: 1,
+                        font: {
+                            weight: 'bold' // Make y-axis labels bold
+                        }
                     },
                     animations: {
                         y: {
                             duration: 1500,
-                            from: 0,  // Start from the bottom
+                            from: 0,
                         },
                     },
                 },
+                x: {
+                    ticks: {
+                        font: {
+                            weight: 'bold' // Make x-axis labels bold
+                        }
+                    }
+                }
             },
             animation: {
                 duration: 1500,
-                easing: 'easeOutQuart',  // Smooth rising effect
+                easing: 'easeOutQuart',
             },
         },
+        plugins: [ChartDataLabels]
     });
 }
+
+
 
