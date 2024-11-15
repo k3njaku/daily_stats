@@ -33,9 +33,9 @@ function createActivityChart() {
         data: {
             labels: ['Zuhaib', 'Babar'],
             datasets: [
-                { label: 'Calls', data: [382, 473], backgroundColor: '#d32f2f' },
-                { label: 'Emails', data: [424, 533], backgroundColor: '#e57373' },
-                { label: 'Task', data: [513, 510], backgroundColor: '#ffcdd2' }
+                { label: 'Calls', data: [519, 562], backgroundColor: '#d32f2f' },
+                { label: 'Emails', data: [552, 601], backgroundColor: '#e57373' },
+                { label: 'Task', data: [700, 547], backgroundColor: '#ffcdd2' }
             ]
         },
         options: {
@@ -45,7 +45,7 @@ function createActivityChart() {
                 title: { display: true, text: 'Dials', font: { size: 18, weight: 'bold' } },
             },
             scales: {
-                y: { beginAtZero: true, max: 600 },
+                y: { beginAtZero: true, max: 800 },
             },
         }
     });
@@ -58,7 +58,7 @@ function createSuccessChart() {
         data: {
             labels: ['Zuhaib', 'Babar'],
             datasets: [
-                { label: 'Appointments', data: [7, 3], backgroundColor: '#d32f2f' },
+                { label: 'Appointments', data: [8, 4], backgroundColor: '#d32f2f' },
                 { label: 'Showups', data: [5, 0], backgroundColor: '#ffcdd2' }
             ]
         },
