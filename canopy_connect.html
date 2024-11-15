@@ -2,88 +2,141 @@
 <html lang="en">
 
 <head>
+    <!-- Sets the character encoding to UTF-8 for broad character support -->
     <meta charset="UTF-8">
+    <!-- Enables responsive design for different screen sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canopy Connect Stats</title>
+    <!-- Sets the title of the page displayed in the browser tab -->
+    <title>Payoneer Stats</title>
+
+    <!-- Internal CSS styling for the page -->
     <style>
+        /* General body styling to center content and set font */
         body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
-            padding: 20px;
         }
 
+        /* Styles for the Payoneer logo */
         #canopy-logo {
-            width: 180px;
-            margin: 20px 0;
+            width: 220px;
+            /* Sets logo width */
+            margin-top: 30px;
+            /* Adds space above the logo */
         }
 
+        /* Container styling for tables with entry animation */
         .table-container {
+            width: 100%;
             max-width: 800px;
-            margin: 20px auto;
-            padding: 10px;
-            opacity: 1;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            opacity: 0;
+            /* Initially hidden */
+            transform: translateY(20px);
+            /* Position slightly lower for animation effect */
+            transition: opacity 1s ease, transform 1s ease;
+            /* Smooth transition for fade-in effect */
         }
 
-        .table-header-daily,
-        .table-header-monthly {
-            font-weight: bold;
+        /* Visible class to make table containers appear with animation */
+        .table-container.visible {
+            opacity: 1;
+            /* Fully visible */
+            transform: translateY(0);
+            /* Moves to original position */
+        }
+
+        /* Header styling for daily report table */
+        .table-header {
+            background-color: #1B1CD6;
+            /* Orange background */
             color: white;
+            font-weight: bold;
+            text-align: center;
             padding: 10px;
             font-size: 1.2em;
-            margin: 10px 0;
         }
 
-        .table-header-daily {
-            background-color: #0000FF;
-            /* Blue for Canopy Daily */
-        }
-
+        /* Header styling for monthly report table with different color */
         .table-header-monthly {
-            background-color: #0000FF;
-            /* Blue for Canopy Monthly */
+            background-color: #1B1CD6;
+            /* Magenta background */
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            font-size: 1.2em;
         }
 
+        /* General table styling */
         table {
             width: 100%;
+            /* Full width of container */
             border-collapse: collapse;
+            /* Removes space between cells */
+            margin-top: 5px;
         }
 
+        /* Styles for table cells */
         th,
         td {
             border: 1px solid black;
+            /* Black borders around cells */
             padding: 8px;
             text-align: center;
         }
 
+        /* Background color for table headers */
         th {
             background-color: #f2f2f2;
         }
 
-        #chart-container-activities,
-        #chart-container-success {
-            max-width: 800px;
-            margin: 40px auto;
+        /* Styling for the first and second chart containers with animation */
+        #chart-container,
+        #chart-container-2 {
+            width: 80%;
+            max-width: 600px;
+            margin: 40px 0;
+            opacity: 0;
+            /* Initially hidden */
+            transform: translateY(20px);
+            /* Positioned slightly down */
+            transition: opacity 1s ease, transform 1s ease;
+            /* Smooth transition for fade-in effect */
+        }
+
+        /* Makes chart containers visible with animation */
+        #chart-container.visible,
+        #chart-container-2.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
+
+    <!-- Including Chart.js library from an external source for rendering charts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 </head>
 
 <body>
 
-    <!-- Canopy Connect Logo as Heading -->
-    <img id="canopy-logo" src="canopy_logo.png" alt="Canopy Connect Logo">
+    <!-- Displaying the Payoneer logo with specific styling through the ID -->
+    <img id="canopy-logo" src="canopy_logo.png" alt="Payoneer Logo">
 
-    <!-- Daily Table -->
+    <!-- Container for daily table data with fade-in effect -->
     <div class="table-container" id="daily-table">
-        <div class="table-header-daily">
-            13-Nov-2024<br>Canopy Daily
+        <div class="table-header">
+            14-Nov-2024<br>CanopyConnect Daily
         </div>
         <table>
             <thead>
                 <tr>
-                    <th>SDR</th>
+                    <th style="color: black;">SDR</th>
                     <th>Email</th>
                     <th>Tasks</th>
                     <th>Calls</th>
@@ -94,65 +147,73 @@
             <tbody>
                 <tr>
                     <td>Daniyal</td>
-                    <td>23</td>
-                    <td>74</td>
+                    <td>58</td>
+                    <td>80</td>
                     <td>18</td>
-                    <td></td>
-                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>Gareth</td>
-                    <td>38</td>
-                    <td>32</td>
-                    <td>109</td>
-                    <td></td>
-                    <td>1</td>
+                    <td>49</td>
+                    <td>53</td>
+                    <td>89</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>Ibrahim</td>
-                    <td>2</td>
                     <td>0</td>
-                    <td>85</td>
-                    <td></td>
-                    <td>1</td>
+                    <td>21</td>
+                    <td>56</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>Kurt</td>
                     <td>0</td>
                     <td>0</td>
                     <td>0</td>
-                    <td></td>
-                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>Vivek</td>
-                    <td>0</td>
                     <td>15</td>
-                    <td>42</td>
-                    <td></td>
-                    <td></td>
+                    <td>0</td>
+                    <td>38</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>Webster</td>
+                    <td>14</td>
+                    <td>3</td>
+                    <td>10</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr style="font-weight: bold;">
+                    <td>Grand Total</td>
+                    <td>136</td>
+                    <td>157</td>
+                    <td>211</td>
                     <td>0</td>
-                    <td>13</td>
-                    <td>30</td>
-                    <td></td>
-                    <td></td>
+                    <td>0</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
-    <!-- Monthly Table -->
+    <!-- Container for monthly table data with fade-in effect -->
     <div class="table-container" id="monthly-table">
         <div class="table-header-monthly">
-            November<br>Canopy Monthly
+            November<br>CanopyConnect Monthly
         </div>
         <table>
             <thead>
                 <tr>
-                    <th>SDR</th>
+                    <th style="color: black;">SDR</th>
                     <th>Email</th>
                     <th>Tasks</th>
                     <th>Calls</th>
@@ -163,25 +224,25 @@
             <tbody>
                 <tr>
                     <td>Daniyal</td>
-                    <td>309</td>
-                    <td>244</td>
-                    <td>219</td>
+                    <td>354</td>
+                    <td>266</td>
+                    <td>243</td>
                     <td>1</td>
                     <td>2</td>
                 </tr>
                 <tr>
                     <td>Gareth</td>
-                    <td>416</td>
-                    <td>136</td>
-                    <td>422</td>
+                    <td>474</td>
+                    <td>157</td>
+                    <td>463</td>
                     <td>1</td>
                     <td>1</td>
                 </tr>
                 <tr>
                     <td>Ibrahim</td>
-                    <td>84</td>
-                    <td>4</td>
-                    <td>274</td>
+                    <td>93</td>
+                    <td>37</td>
+                    <td>311</td>
                     <td>2</td>
                     <td>1</td>
                 </tr>
@@ -190,112 +251,118 @@
                     <td>57</td>
                     <td>40</td>
                     <td>0</td>
-                    <td></td>
-                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>Vivek</td>
-                    <td>0</td>
                     <td>15</td>
-                    <td>42</td>
+                    <td>15</td>
+                    <td>81</td>
                     <td>3</td>
-                    <td></td>
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>Webster</td>
-                    <td>0</td>
+                    <td>14</td>
                     <td>13</td>
-                    <td>30</td>
-                    <td></td>
-                    <td></td>
+                    <td>37</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr style="font-weight: bold;">
+                    <td>Grand Total</td>
+                    <td>1007</td>
+                    <td>528</td>
+                    <td>1135</td>
+                    <td>7</td>
+                    <td>4</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
-    <!-- Activities Chart -->
-    <div id="chart-container-activities">
-        <canvas id="activitiesChart"></canvas>
+    <!-- First chart container for Dials and Connected chart -->
+    <div id="chart-container">
+        <canvas id="dialsChart"></canvas>
     </div>
 
-    <!-- Success Chart -->
-    <div id="chart-container-success">
+    <!-- Second chart container for Success chart -->
+    <div id="chart-container-2">
         <canvas id="successChart"></canvas>
     </div>
 
+    <!-- JavaScript to create and display charts -->
     <script>
-        function createActivitiesChart() {
-            const ctx = document.getElementById('activitiesChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
+        let dialsChart; // Variable to hold the instance of the first chart
+
+        function createDialsChart() {
+            const ctx = document.getElementById('dialsChart').getContext('2d');
+            dialsChart = new Chart(ctx, {
+                type: 'bar', // Defines a bar chart
                 data: {
-                    labels: ['Daniyal', 'Gareth', 'Ibrahim', 'Kurt', 'Vivek', 'Webster'],
+                    labels: ['Daniyal', 'Gareth', 'Ibrahim', 'Kurt', 'Vivek', 'Webster'], // SDR names as x-axis labels
                     datasets: [
                         {
-                            label: 'Calls',
-                            data: [219, 422, 274, 0, 42, 30],
-                            backgroundColor: '#0000FF'
+                            label: 'Email', // Label for Email dataset
+                            data: [354, 474, 93, 57, 15, 14], // Data for Email
+                            backgroundColor: '#FF4500', // Color of Email bars
                         },
                         {
-                            label: 'Email',
-                            data: [309, 416, 84, 57, 0, 0],
-                            backgroundColor: '#FF4500'
+                            label: 'Tasks', // Label for Tasks dataset
+                            data: [266, 157, 37, 40, 15, 13], // Data for Tasks
+                            backgroundColor: '#1E90FF', // Color of Tasks bars
                         },
                         {
-                            label: 'Tasks',
-                            data: [244, 136, 4, 40, 15, 13],
-                            backgroundColor: '#FFD700'
+                            label: 'Calls', // Label for Calls dataset
+                            data: [243, 463, 311, 0, 81, 37], // Data for Calls
+                            backgroundColor: '#32CD32', // Color of Calls bars
                         }
                     ]
                 },
                 options: {
                     responsive: true,
-                    animation: {
-                        duration: 1500,
-                        easing: 'easeOutBounce'
-                    },
                     plugins: {
                         legend: {
                             display: true,
                             position: 'top',
                             labels: {
                                 font: {
-                                    size: 14
+                                    weight: 'bold' // Make legend labels bold
                                 }
                             }
                         },
                         title: {
                             display: true,
-                            text: 'Dials',
+                            text: 'SDR Activities: Email, Tasks, and Calls',
                             font: {
-                                size: 20,
-                                weight: 'bold'
+                                size: 18,
+                                weight: 'bold' // Make title bold
                             }
                         },
-                        datalabels: {
+                        datalabels: { // Configuration for data labels
                             anchor: 'end',
-                            align: 'top',
-                            formatter: (value) => value,
+                            align: 'end',
                             color: 'black',
                             font: {
-                                size: 14
+                                weight: 'bold'
                             }
                         }
                     },
                     scales: {
+                        x: {
+                            ticks: {
+                                font: {
+                                    weight: 'bold' // Make x-axis labels bold
+                                }
+                            }
+                        },
                         y: {
                             beginAtZero: true,
                             max: 500,
                             ticks: {
                                 font: {
-                                    size: 14
-                                }
-                            }
-                        },
-                        x: {
-                            ticks: {
-                                font: {
-                                    size: 14
+                                    weight: 'bold' // Make y-axis labels bold
                                 }
                             }
                         }
@@ -305,73 +372,73 @@
             });
         }
 
+
+
+
+        let successChart; // Variable to hold the instance of the second chart
+
         function createSuccessChart() {
             const ctx = document.getElementById('successChart').getContext('2d');
-            new Chart(ctx, {
+            successChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Daniyal', 'Gareth', 'Ibrahim', 'Kurt', 'Vivek', 'Webster'],
+                    labels: ['Daniyal', 'Gareth', 'Ibrahim', 'Kurt', 'Vivek', 'Webster'], // SDR names as x-axis labels
                     datasets: [
                         {
                             label: 'Appointments',
-                            data: [1, 1, 2, 0, 3, 0],
-                            backgroundColor: '#0000FF'
+                            data: [1, 1, 2, 0, 3, 0], // Data for Appointments
+                            backgroundColor: '#1E90FF', // Color for Appointments bars
                         },
                         {
                             label: 'Showups',
-                            data: [2, 1, 1, 0, 0, 0],
-                            backgroundColor: '#32CD32'
+                            data: [2, 1, 1, 0, 0, 0], // Data for Showups
+                            backgroundColor: '#FF6347', // Color for Showups bars
                         }
                     ]
                 },
                 options: {
                     responsive: true,
-                    animation: {
-                        duration: 1500,
-                        easing: 'easeOutBounce'
-                    },
                     plugins: {
                         legend: {
                             display: true,
                             position: 'top',
                             labels: {
                                 font: {
-                                    size: 14
+                                    weight: 'bold' // Make legend labels bold
                                 }
                             }
                         },
                         title: {
                             display: true,
-                            text: 'Appointments/Showups',
+                            text: 'Success (November)',
                             font: {
-                                size: 20,
-                                weight: 'bold'
+                                size: 18,
+                                weight: 'bold' // Make title bold
                             }
                         },
-                        datalabels: {
+                        datalabels: { // Configuration for data labels
                             anchor: 'end',
-                            align: 'top',
-                            formatter: (value) => value,
+                            align: 'end',
                             color: 'black',
                             font: {
-                                size: 14
+                                weight: 'bold'
                             }
                         }
                     },
                     scales: {
-                        y: {
-                            beginAtZero: true,
-                            max: 3,
-                            ticks: {
-                                font: {
-                                    size: 14
-                                }
-                            }
-                        },
                         x: {
                             ticks: {
                                 font: {
-                                    size: 14
+                                    weight: 'bold' // Make x-axis labels bold
+                                }
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            max: 5,
+                            ticks: {
+                                font: {
+                                    weight: 'bold' // Make y-axis labels bold
                                 }
                             }
                         }
@@ -381,12 +448,42 @@
             });
         }
 
-        window.onload = function () {
-            createActivitiesChart();
-            createSuccessChart();
-        };
-    </script>
 
+
+
+        function resetDialsChart() {
+            if (dialsChart) {
+                dialsChart.destroy(); // Clears the existing chart instance to prevent overlaps
+            }
+            createDialsChart(); // Recreates the dials chart
+        }
+
+        function resetSuccessChart() {
+            if (successChart) {
+                successChart.destroy(); // Clears the existing chart instance to prevent overlaps
+            }
+            createSuccessChart(); // Recreates the success chart
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    if (entry.target.id === 'chart-container') {
+                        resetDialsChart();
+                    } else if (entry.target.id === 'chart-container-2') {
+                        resetSuccessChart();
+                    }
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.table-container, #chart-container, #chart-container-2').forEach((element) => {
+            observer.observe(element); // Observes visibility of tables and charts
+        });
+    </script>
 </body>
 
 </html>
