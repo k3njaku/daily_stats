@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,48 +12,63 @@
             margin: 0;
             padding: 20px;
         }
+
         #avibra-logo {
             width: 180px;
             margin: 10px 0;
         }
+
         .table-container {
             max-width: 800px;
             margin: 20px auto;
             padding: 10px;
             opacity: 1;
         }
-        .table-header-daily, .table-header-monthly {
+
+        .table-header-daily,
+        .table-header-monthly {
             font-weight: bold;
             color: white;
             padding: 10px;
             font-size: 1.2em;
             margin: 10px 0;
         }
+
         .table-header-daily {
-            background-color: #6A0DAD; /* Purple for Avibra Daily */
+            background-color: #6A0DAD;
+            /* Purple for Avibra Daily */
         }
+
         .table-header-monthly {
-            background-color: #6A0DAD; /* Purple for Avibra Monthly */
+            background-color: #6A0DAD;
+            /* Purple for Avibra Monthly */
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
         }
-        th, td {
+
+        th,
+        td {
             border: 1px solid black;
             padding: 8px;
             text-align: center;
         }
+
         th {
             background-color: #f2f2f2;
         }
-        #chart-container-activities, #chart-container-success {
+
+        #chart-container-activities,
+        #chart-container-success {
             max-width: 800px;
             margin: 40px auto;
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
 
     <!-- Avibra Logo as Heading -->
@@ -61,7 +77,7 @@
     <!-- Daily Table -->
     <div class="table-container" id="daily-table">
         <div class="table-header-daily">
-            13-Nov-2024<br>Avibra Daily
+            15-Nov-2024<br>Avibra Daily
         </div>
         <table>
             <thead>
@@ -76,17 +92,17 @@
             <tbody>
                 <tr>
                     <td>Earnest</td>
-                    <td>280</td>
-                    <td>79</td>
-                    <td>160</td>
-                    <td>1</td>
+                    <td>182</td>
+                    <td>21</td>
+                    <td>0</td>
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>Jayden</td>
-                    <td>152</td>
-                    <td>2</td>
-                    <td>36</td>
-                    <td></td>
+                    <td>248</td>
+                    <td>28</td>
+                    <td>32</td>
+                    <td>&nbsp;</td>
                 </tr>
             </tbody>
         </table>
@@ -112,22 +128,22 @@
             <tbody>
                 <tr>
                     <td>Earnest</td>
-                    <td>1100</td>
-                    <td>437</td>
+                    <td>1282</td>
+                    <td>479</td>
                     <td>426</td>
-                    <td>3</td>
+                    <td>5</td>
                     <td>2</td>
-                    <td></td>
-                </tr>
-                <tr>
+                    <td>&nbsp;</td>
+                    </tr>
+                    <tr>
                     <td>Jayden</td>
-                    <td>755</td>
-                    <td>352</td>
-                    <td>627</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                    <td>1003</td>
+                    <td>439</td>
+                    <td>659</td>
+                    <td>1</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    </tr>
             </tbody>
         </table>
     </div>
@@ -144,58 +160,59 @@
 
     <script>
         function createActivitiesChart() {
-            const ctx = document.getElementById('activitiesChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Earnest', 'Jayden'],
-                    datasets: [
-                        {
-                            label: 'Dials',
-                            data: [1100, 755],
-                            backgroundColor: '#8A2BE2'
-                        },
-                        {
-                            label: 'Email',
-                            data: [437, 352],
-                            backgroundColor: '#9370DB'
-                        },
-                        {
-                            label: 'Tasks',
-                            data: [426, 627],
-                            backgroundColor: '#DDA0DD'
-                        }
-                    ]
+    const ctx = document.getElementById('activitiesChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Earnest', 'Jayden'],
+            datasets: [
+                {
+                    label: 'Dials',
+                    data: [1282, 1003],
+                    backgroundColor: '#8A2BE2'
                 },
-                options: {
-                    responsive: true,
-                    animation: {
-                        duration: 1500,
-                        easing: 'easeOutBounce'
-                    },
-                    plugins: {
-                        legend: {
-                            display: true,
-                            position: 'top'
-                        },
-                        title: {
-                            display: true,
-                            text: 'Activities',
-                            font: {
-                                size: 18,
-                                weight: 'bold'
-                            }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            max: 1250
-                        }
+                {
+                    label: 'Email',
+                    data: [479, 439],
+                    backgroundColor: '#9370DB'
+                },
+                {
+                    label: 'Tasks',
+                    data: [426, 659],
+                    backgroundColor: '#DDA0DD'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            animation: {
+                duration: 1500,
+                easing: 'easeOutBounce'
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                },
+                title: {
+                    display: true,
+                    text: 'Activities',
+                    font: {
+                        size: 18,
+                        weight: 'bold'
                     }
                 }
-            });
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 1500
+                }
+            }
         }
+    });
+}
+
 
         function createSuccessChart() {
             const ctx = document.getElementById('successChart').getContext('2d');
@@ -246,11 +263,12 @@
             });
         }
 
-        window.onload = function() {
+        window.onload = function () {
             createActivitiesChart();
             createSuccessChart();
         };
     </script>
 
 </body>
+
 </html>
