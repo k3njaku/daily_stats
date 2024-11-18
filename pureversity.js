@@ -33,23 +33,78 @@ function createActivityChart() {
         data: {
             labels: ['Zuhaib', 'Babar'],
             datasets: [
-                { label: 'Calls', data: [519, 562], backgroundColor: '#d32f2f' },
-                { label: 'Emails', data: [552, 601], backgroundColor: '#e57373' },
-                { label: 'Task', data: [700, 547], backgroundColor: '#ffcdd2' }
+                { 
+                    label: 'Calls', 
+                    data: [519, 562], 
+                    backgroundColor: '#d32f2f'
+                },
+                { 
+                    label: 'Emails', 
+                    data: [552, 601], 
+                    backgroundColor: '#e57373'
+                },
+                { 
+                    label: 'Task', 
+                    data: [700, 547], 
+                    backgroundColor: '#ffcdd2'
+                }
             ]
         },
         options: {
             responsive: true,
             plugins: {
-                legend: { display: true, position: 'top' },
-                title: { display: true, text: 'Dials', font: { size: 18, weight: 'bold' } },
+                legend: { 
+                    display: true, 
+                    position: 'top',
+                    labels: {
+                        font: { weight: 'bold' }
+                    }
+                },
+                title: { 
+                    display: true, 
+                    text: 'Dials', 
+                    font: { size: 18, weight: 'bold' }
+                },
+                datalabels: {
+                    anchor: 'end',
+                    align: 'top',
+                    font: {
+                        weight: 'bold'
+                    },
+                    formatter: (value) => value // Display the value directly
+                }
             },
             scales: {
-                y: { beginAtZero: true, max: 800 },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Team Members',
+                        font: { weight: 'bold', size: 14 }
+                    },
+                    ticks: {
+                        font: { weight: 'bold' }
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Activity Count',
+                        font: { weight: 'bold', size: 14 }
+                    },
+                    ticks: {
+                        font: { weight: 'bold' }
+                    },
+                    beginAtZero: true,
+                    max: 800,
+                },
             },
-        }
+        },
+        plugins: [ChartDataLabels] // Enable the plugin
     });
 }
+
+
+
 
 function createSuccessChart() {
     const ctx = document.getElementById('successChart').getContext('2d');
@@ -58,19 +113,67 @@ function createSuccessChart() {
         data: {
             labels: ['Zuhaib', 'Babar'],
             datasets: [
-                { label: 'Appointments', data: [8, 4], backgroundColor: '#d32f2f' },
-                { label: 'Showups', data: [5, 0], backgroundColor: '#ffcdd2' }
+                { 
+                    label: 'Appointments', 
+                    data: [8, 4], 
+                    backgroundColor: '#d32f2f'
+                },
+                { 
+                    label: 'Showups', 
+                    data: [5, 0], 
+                    backgroundColor: '#ffcdd2'
+                }
             ]
         },
         options: {
             responsive: true,
             plugins: {
-                legend: { display: true, position: 'top' },
-                title: { display: true, text: 'Success', font: { size: 18, weight: 'bold' } },
+                legend: { 
+                    display: true, 
+                    position: 'top',
+                    labels: {
+                        font: { weight: 'bold' }
+                    }
+                },
+                title: { 
+                    display: true, 
+                    text: 'Success', 
+                    font: { size: 18, weight: 'bold' }
+                },
+                datalabels: {
+                    anchor: 'end',
+                    align: 'top',
+                    font: {
+                        weight: 'bold'
+                    },
+                    formatter: (value) => value // Display the value directly
+                }
             },
             scales: {
-                y: { beginAtZero: true, max: 8 },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Team Members',
+                        font: { weight: 'bold', size: 14 }
+                    },
+                    ticks: {
+                        font: { weight: 'bold' }
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Success Metrics',
+                        font: { weight: 'bold', size: 14 }
+                    },
+                    ticks: {
+                        font: { weight: 'bold' }
+                    },
+                    beginAtZero: true,
+                    max: 8,
+                },
             },
-        }
+        },
+        plugins: [ChartDataLabels] // Enable the plugin
     });
 }
