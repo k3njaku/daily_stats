@@ -35,7 +35,7 @@ function createActivityChart() {
             datasets: [
                 { 
                     label: 'Calls', 
-                    data: [519, 562], 
+                    data: [548, 562], 
                     backgroundColor: '#d32f2f'
                 },
                 { 
@@ -45,7 +45,7 @@ function createActivityChart() {
                 },
                 { 
                     label: 'Task', 
-                    data: [700, 547], 
+                    data: [700, 657], 
                     backgroundColor: '#ffcdd2'
                 }
             ]
@@ -71,14 +71,14 @@ function createActivityChart() {
                     font: {
                         weight: 'bold'
                     },
-                    formatter: (value) => value // Display the value directly
+                    formatter: (value) => value // Display the value directly on the bars
                 }
             },
             scales: {
                 x: {
                     title: {
                         display: true,
-                        text: 'Team Members',
+                        text: 'SDR',
                         font: { weight: 'bold', size: 14 }
                     },
                     ticks: {
@@ -88,7 +88,7 @@ function createActivityChart() {
                 y: {
                     title: {
                         display: true,
-                        text: 'Activity Count',
+                        text: 'Dials',
                         font: { weight: 'bold', size: 14 }
                     },
                     ticks: {
@@ -99,9 +99,10 @@ function createActivityChart() {
                 },
             },
         },
-        plugins: [ChartDataLabels] // Enable the plugin
+        plugins: [ChartDataLabels] // Enable the plugin for data labels
     });
 }
+
 
 
 
@@ -115,12 +116,12 @@ function createSuccessChart() {
             datasets: [
                 { 
                     label: 'Appointments', 
-                    data: [8, 4], 
+                    data: [11, 4], 
                     backgroundColor: '#d32f2f'
                 },
                 { 
                     label: 'Showups', 
-                    data: [5, 0], 
+                    data: [6, 0], 
                     backgroundColor: '#ffcdd2'
                 }
             ]
@@ -146,7 +147,7 @@ function createSuccessChart() {
                     font: {
                         weight: 'bold'
                     },
-                    formatter: (value) => value // Display the value directly
+                    formatter: (value) => value // Display the value directly on the bars
                 }
             },
             scales: {
@@ -163,17 +164,18 @@ function createSuccessChart() {
                 y: {
                     title: {
                         display: true,
-                        text: 'Success Metrics',
+                        text: 'Metrics',
                         font: { weight: 'bold', size: 14 }
                     },
                     ticks: {
                         font: { weight: 'bold' }
                     },
                     beginAtZero: true,
-                    max: 8,
+                    max: 12, // Adjusted to fit the highest value
                 },
             },
         },
-        plugins: [ChartDataLabels] // Enable the plugin
+        plugins: [ChartDataLabels] // Enable the plugin for data labels
     });
 }
+
