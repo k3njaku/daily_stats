@@ -134,8 +134,8 @@
                     <td>5</td>
                     <td>2</td>
                     <td>&nbsp;</td>
-                    </tr>
-                    <tr>
+                </tr>
+                <tr>
                     <td>Jayden</td>
                     <td>1003</td>
                     <td>439</td>
@@ -143,7 +143,7 @@
                     <td>1</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
-                    </tr>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -160,58 +160,58 @@
 
     <script>
         function createActivitiesChart() {
-    const ctx = document.getElementById('activitiesChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Earnest', 'Jayden'],
-            datasets: [
-                {
-                    label: 'Dials',
-                    data: [1282, 1003],
-                    backgroundColor: '#8A2BE2'
+            const ctx = document.getElementById('activitiesChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Earnest', 'Jayden'],
+                    datasets: [
+                        {
+                            label: 'Dials',
+                            data: [1282, 1003],
+                            backgroundColor: '#8A2BE2'
+                        },
+                        {
+                            label: 'Email',
+                            data: [479, 439],
+                            backgroundColor: '#9370DB'
+                        },
+                        {
+                            label: 'Tasks',
+                            data: [426, 659],
+                            backgroundColor: '#DDA0DD'
+                        }
+                    ]
                 },
-                {
-                    label: 'Email',
-                    data: [479, 439],
-                    backgroundColor: '#9370DB'
-                },
-                {
-                    label: 'Tasks',
-                    data: [426, 659],
-                    backgroundColor: '#DDA0DD'
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            animation: {
-                duration: 1500,
-                easing: 'easeOutBounce'
-            },
-            plugins: {
-                legend: {
-                    display: true,
-                    position: 'top'
-                },
-                title: {
-                    display: true,
-                    text: 'Activities',
-                    font: {
-                        size: 18,
-                        weight: 'bold'
+                options: {
+                    responsive: true,
+                    animation: {
+                        duration: 1500,
+                        easing: 'easeOutBounce'
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        },
+                        title: {
+                            display: true,
+                            text: 'Activities',
+                            font: {
+                                size: 18,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 1500
+                        }
                     }
                 }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    max: 1500
-                }
-            }
+            });
         }
-    });
-}
 
 
         function createSuccessChart() {
@@ -222,8 +222,8 @@
                     labels: ['Earnest', 'Jayden'],
                     datasets: [
                         {
-                            label: 'Appt Scheduled',
-                            data: [3, 0],
+                            label: 'Apt Scheduled',
+                            data: [5, 1],
                             backgroundColor: '#1E90FF'
                         },
                         {
@@ -256,12 +256,13 @@
                     scales: {
                         y: {
                             beginAtZero: true,
-                            max: 4
+                            max: 5
                         }
                     }
                 }
             });
         }
+
 
         window.onload = function () {
             createActivitiesChart();
