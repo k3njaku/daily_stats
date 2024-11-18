@@ -43,18 +43,18 @@ function createActivityChart() {
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Hammad Faisal', 'Ali Murtaza', 'Ahmed Ali', 'Khuzaima Tahir', 'Amjad Baig'],
+            labels: ['Hammad Faisal', 'Ali Murtaza', 'Amjad Baig', 'Ahmed Ali', 'Khuzaima Tahir'],
             datasets: [
                 {
                     label: 'Calls',
-                    data: [611, 453, 756, 59, 871],
+                    data: [694, 526, 942, 834, 60],
                     backgroundColor: '#8A2BE2',
                     barThickness: 'flex',
                     barPercentage: 0.7,
                 },
                 {
                     label: 'Email',
-                    data: [4770, 4973, 2745, 44, 170],
+                    data: [5130, 5480, 170, 2825, 45],
                     backgroundColor: '#FF6347',
                     barThickness: 'flex',
                     barPercentage: 0.7,
@@ -90,7 +90,7 @@ function createActivityChart() {
                         size: 12, // Set font size for readability
                         weight: 'bold' // Make labels bold
                     },
-                    formatter: function(value, context) {
+                    formatter: function (value, context) {
                         return value; // Show the value as is
                     }
                 }
@@ -98,7 +98,7 @@ function createActivityChart() {
             scales: {
                 y: {
                     beginAtZero: true,
-                    max: 5000, // Adjusted to accommodate max email value
+                    max: 6000, // Adjusted to accommodate max email value
                     ticks: {
                         stepSize: 1000,
                         font: {
@@ -130,17 +130,13 @@ function createActivityChart() {
 }
 
 
-
-
-
-
 // Function to create the Success Chart
 function createSuccessChart() {
     const ctx = document.getElementById('successChart').getContext('2d');
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Hammad Faisal', 'Ali Murtaza', 'Ahmed Ali', 'Amjad Baig', 'Khuzaima Tahir'],
+            labels: ['Hammad Faisal', 'Ali Murtaza', 'Amjad Baig', 'Ahmed Ali', 'Khuzaima Tahir'],
             datasets: [
                 {
                     label: 'Sched Appt',
@@ -151,14 +147,14 @@ function createSuccessChart() {
                 },
                 {
                     label: 'Showups',
-                    data: [8, 3, 1, 0, 1],
+                    data: [9, 4, 1, 1, 1],
                     backgroundColor: '#32CD32',
                     barThickness: 'flex',
                     barPercentage: 0.7,
                 },
                 {
                     label: 'Opp',
-                    data: [4, 2, 0, 0, 0],
+                    data: [5, 2, 1, 0, 0],
                     backgroundColor: '#228B22',
                     barThickness: 'flex',
                     barPercentage: 0.7,
@@ -235,6 +231,3 @@ function createSuccessChart() {
         plugins: [ChartDataLabels]
     });
 }
-
-
-
