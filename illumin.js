@@ -70,7 +70,8 @@ function createActivityChart() {
                     labels: {
                         font: {
                             weight: 'bold' // Make legend labels bold
-                        }
+                        },
+                        padding: 2
                     }
                 },
                 title: {

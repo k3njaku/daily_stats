@@ -113,16 +113,16 @@
             <tbody>
                 <tr>
                     <td>Maryam</td>
-                    <td>74</td>
-                    <td>35</td>
-                    <td>0:32:32</td>
-                    <td>&nbsp;</td>
+                    <td>31</td>
+                    <td>16</td>
+                    <td>0:14:12</td>
+                    <td>1</td>
                 </tr>
                 <tr>
                     <td>Mehwish</td>
-                    <td>102</td>
-                    <td>53</td>
-                    <td>0:54:49</td>
+                    <td>87</td>
+                    <td>47</td>
+                    <td>1:01:20</td>
                     <td>&nbsp;</td>
                 </tr>
             </tbody>
@@ -148,22 +148,22 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Maryam</td>
-                    <td>662</td>
-                    <td>297</td>
-                    <td>6:35:50</td>
+                    <td>Mehwish</td>
+                    <td>922</td>
+                    <td>430</td>
+                    <td>9:34:24</td>
                     <td>17</td>
-                    <td>14</td>
-                    <td>82.35%</td>
+                    <td>16</td>
+                    <td>94.12%</td>
                 </tr>
                 <tr>
-                    <td>Mehwish</td>
-                    <td>835</td>
-                    <td>383</td>
-                    <td>8:33:04</td>
-                    <td>17</td>
-                    <td>14</td>
-                    <td>82.35%</td>
+                    <td>Maryam</td>
+                    <td>693</td>
+                    <td>313</td>
+                    <td>6:50:02</td>
+                    <td>18</td>
+                    <td>15</td>
+                    <td>83.33%</td>
                 </tr>
             </tbody>
         </table>
@@ -188,16 +188,16 @@
             dialsChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Maryam', 'Mehwish'],
+                    labels: ['Mehwish', 'Maryam'],
                     datasets: [
                         {
                             label: 'Dials',
-                            data: [662, 835],
+                            data: [922, 693],
                             backgroundColor: '#FF4500',
                         },
                         {
                             label: 'Connected',
-                            data: [297, 383],
+                            data: [430, 313],
                             backgroundColor: '#1E90FF',
                         }
                     ]
@@ -262,6 +262,7 @@
         }
 
 
+
         // Initial Chart.js configuration for the second chart
         let successChart;
 
@@ -270,16 +271,16 @@
             successChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Maryam', 'Mehwish'],
+                    labels: ['Mehwish', 'Maryam'],
                     datasets: [
                         {
                             label: 'Appointments',
-                            data: [17, 17],
+                            data: [17, 18],
                             backgroundColor: '#1E90FF',
                         },
                         {
                             label: 'Showups',
-                            data: [14, 14],
+                            data: [16, 15],
                             backgroundColor: '#FF6347',
                         }
                     ]
@@ -342,6 +343,7 @@
                 plugins: [ChartDataLabels]  // Register the data labels plugin
             });
         }
+
 
 
         function resetDialsChart() {
