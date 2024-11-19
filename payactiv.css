@@ -22,6 +22,11 @@ table {
     /* Ensures consistent column width */
 }
 
+tbody tr:hover {
+    background-color: #e0f7fa; /* Light blue for hover */
+}
+
+
 th,
 td {
     padding: 12px 15px;
@@ -126,9 +131,25 @@ thead th:first-child {
     padding: 12px 15px;
     border: 1px solid #ddd;
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: #007acc;;
     font-weight: bold;
 }
+
+.grand-total-table tr {
+    background-color: #007acc; /* Background color of the row */
+    color: #ffffff; /* Text color */
+    z-index: 1; /* Ensure it appears above other elements */
+}
+
+/* Fix the first cell of the Grand Total row */
+.grand-total-table td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #007acc; /* Match the row color */
+    color: #ffffff;
+    z-index: 2; /* Keep it above other cells */
+}
+
 
 /* Flourish charts spacing */
 .flourish-embed {
@@ -167,7 +188,8 @@ thead th:first-child {
     visibility: hidden;
 }
 
-.slideThree input[type="checkbox"]:checked+label {
+.slideThree input[type="checkbox"]:checked + label {
     left: 34px;
     /* Move the knob to the right when ON */
+    background-color: #007acc;
 }
