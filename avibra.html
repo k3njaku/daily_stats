@@ -77,7 +77,7 @@
     <!-- Daily Table -->
     <div class="table-container" id="daily-table">
         <div class="table-header-daily">
-            15-Nov-2024<br>Avibra Daily
+            19-Nov-2024<br>Avibra Daily
         </div>
         <table>
             <thead>
@@ -92,16 +92,16 @@
             <tbody>
                 <tr>
                     <td>Earnest</td>
-                    <td>182</td>
+                    <td>107</td>
                     <td>21</td>
-                    <td>0</td>
+                    <td>21</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>Jayden</td>
-                    <td>248</td>
-                    <td>28</td>
-                    <td>32</td>
+                    <td>77</td>
+                    <td>0</td>
+                    <td>23</td>
                     <td>&nbsp;</td>
                 </tr>
             </tbody>
@@ -128,18 +128,18 @@
             <tbody>
                 <tr>
                     <td>Earnest</td>
-                    <td>1282</td>
-                    <td>479</td>
-                    <td>426</td>
-                    <td>5</td>
+                    <td>1397</td>
+                    <td>549</td>
+                    <td>447</td>
+                    <td>6</td>
                     <td>2</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>Jayden</td>
-                    <td>1003</td>
-                    <td>439</td>
-                    <td>659</td>
+                    <td>1120</td>
+                    <td>515</td>
+                    <td>824</td>
                     <td>1</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -168,17 +168,17 @@
                     datasets: [
                         {
                             label: 'Dials',
-                            data: [1282, 1003],
+                            data: [1397, 1120],
                             backgroundColor: '#8A2BE2'
                         },
                         {
                             label: 'Email',
-                            data: [479, 439],
+                            data: [549, 515],
                             backgroundColor: '#9370DB'
                         },
                         {
                             label: 'Tasks',
-                            data: [426, 659],
+                            data: [447, 824],
                             backgroundColor: '#DDA0DD'
                         }
                     ]
@@ -206,12 +206,13 @@
                     scales: {
                         y: {
                             beginAtZero: true,
-                            max: 1500
+                            max: 1500 // Retained the maximum y-axis value for consistency
                         }
                     }
                 }
             });
         }
+
 
 
         function createSuccessChart() {
