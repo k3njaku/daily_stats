@@ -98,7 +98,7 @@
     <!-- Daily Table -->
     <div class="table-container" id="daily-table">
         <div class="table-header">
-            12-Nov-2024<br>Payoneer Daily
+            18-Nov-2024<br>Payoneer Daily
         </div>
         <table>
             <thead>
@@ -113,17 +113,17 @@
             <tbody>
                 <tr>
                     <td>Maryam</td>
-                    <td>31</td>
-                    <td>16</td>
-                    <td>0:14:12</td>
-                    <td>1</td>
+                    <td>76</td>
+                    <td>47</td>
+                    <td>1:07:00</td>
+                    <td>2</td>
                 </tr>
                 <tr>
                     <td>Mehwish</td>
-                    <td>87</td>
-                    <td>47</td>
-                    <td>1:01:20</td>
-                    <td>&nbsp;</td>
+                    <td>64</td>
+                    <td>31</td>
+                    <td>0:44:01</td>
+                    <td>3</td>
                 </tr>
             </tbody>
         </table>
@@ -149,21 +149,21 @@
             <tbody>
                 <tr>
                     <td>Mehwish</td>
-                    <td>922</td>
-                    <td>430</td>
-                    <td>9:34:24</td>
-                    <td>17</td>
-                    <td>16</td>
-                    <td>94.12%</td>
+                    <td>986</td>
+                    <td>461</td>
+                    <td>10:18:25</td>
+                    <td>20</td>
+                    <td>18</td>
+                    <td>90.00%</td>
                 </tr>
                 <tr>
                     <td>Maryam</td>
-                    <td>693</td>
-                    <td>313</td>
-                    <td>6:50:02</td>
-                    <td>18</td>
-                    <td>15</td>
-                    <td>83.33%</td>
+                    <td>769</td>
+                    <td>360</td>
+                    <td>7:57:02</td>
+                    <td>20</td>
+                    <td>16</td>
+                    <td>80.00%</td>
                 </tr>
             </tbody>
         </table>
@@ -192,12 +192,12 @@
                     datasets: [
                         {
                             label: 'Dials',
-                            data: [922, 693],
+                            data: [986, 769],
                             backgroundColor: '#FF4500',
                         },
                         {
                             label: 'Connected',
-                            data: [430, 313],
+                            data: [461, 360],
                             backgroundColor: '#1E90FF',
                         }
                     ]
@@ -263,6 +263,7 @@
 
 
 
+
         // Initial Chart.js configuration for the second chart
         let successChart;
 
@@ -275,12 +276,12 @@
                     datasets: [
                         {
                             label: 'Appointments',
-                            data: [17, 18],
+                            data: [20, 20],
                             backgroundColor: '#1E90FF',
                         },
                         {
                             label: 'Showups',
-                            data: [16, 15],
+                            data: [18, 16],
                             backgroundColor: '#FF6347',
                         }
                     ]
@@ -331,7 +332,7 @@
                         },
                         y: {
                             beginAtZero: true,
-                            max: 20,
+                            max: 25,  // Adjusted for the new data
                             ticks: {
                                 font: {
                                     weight: 'bold'  // Make y-axis values bold
@@ -343,6 +344,7 @@
                 plugins: [ChartDataLabels]  // Register the data labels plugin
             });
         }
+
 
 
 
