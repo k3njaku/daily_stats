@@ -103,11 +103,13 @@ function createSuccessChart() {
                 },
                 datalabels: {
                     anchor: 'end',
-                    align: 'top',
+                    align: 'start', // Align labels below the top edge of the bar
                     font: {
-                        weight: 'bold'
+                        weight: 'bold',
+                        size: 12
                     },
-                    formatter: (value) => value // Display the value directly on the bars
+                    color: 'black',
+                    formatter: (value) => value
                 }
             },
             scales: {
@@ -131,11 +133,12 @@ function createSuccessChart() {
                         font: { weight: 'bold' }
                     },
                     beginAtZero: true,
-                    max: 8, // Adjusted to match the data
+                    max: 12, // Increased to add space at the top of the chart
                 },
             },
         },
         plugins: [ChartDataLabels] // Enable the plugin for data labels
     });
 }
+
 
