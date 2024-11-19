@@ -43,18 +43,18 @@ function createActivityChart() {
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Hammad Faisal', 'Ali Murtaza', 'Amjad Baig', 'Ahmed Ali', 'Khuzaima Tahir'],
+            labels: ["Hammad Faisal", "Khuzaima Tahir", "Ali Murtaza", "Amjad Baig", "Ahmed Ali"],
             datasets: [
                 {
                     label: 'Calls',
-                    data: [694, 526, 942, 834, 60],
+                    data: [727, 60, 575, 1001, 934],
                     backgroundColor: '#8A2BE2',
                     barThickness: 'flex',
                     barPercentage: 0.7,
                 },
                 {
                     label: 'Email',
-                    data: [5130, 5480, 170, 2825, 45],
+                    data: [6040, 45, 6081, 170, 2827],
                     backgroundColor: '#FF6347',
                     barThickness: 'flex',
                     barPercentage: 0.7,
@@ -136,25 +136,25 @@ function createSuccessChart() {
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Hammad Faisal', 'Ali Murtaza', 'Amjad Baig', 'Ahmed Ali', 'Khuzaima Tahir'],
+            labels: ["Hammad Faisal", "Khuzaima Tahir", "Ali Murtaza", "Amjad Baig", "Ahmed Ali"],
             datasets: [
                 {
                     label: 'Sched Appt',
-                    data: [9, 4, 1, 1, 1],
+                    data: [10, 3, 4, 1, 1],
                     backgroundColor: '#FFD700',
                     barThickness: 'flex',
                     barPercentage: 0.7,
                 },
                 {
                     label: 'Showups',
-                    data: [9, 4, 1, 1, 1],
+                    data: [9, 3, 5, 1, 1],
                     backgroundColor: '#32CD32',
                     barThickness: 'flex',
                     barPercentage: 0.7,
                 },
                 {
                     label: 'Opp',
-                    data: [5, 2, 1, 0, 0],
+                    data: [5, 3, 2, 1, 0],
                     backgroundColor: '#228B22',
                     barThickness: 'flex',
                     barPercentage: 0.7,
