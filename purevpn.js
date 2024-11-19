@@ -76,7 +76,7 @@ function createSuccessChart() {
             datasets: [
                 { 
                     label: 'Appointments', 
-                    data: [7, 10], 
+                    data: [7, 1], 
                     backgroundColor: '#4dd0e1' 
                 },
                 { 
