@@ -193,3 +193,12 @@ thead th:first-child {
     /* Move the knob to the right when ON */
     background-color: #007acc;
 }
+
+canvas {
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    height: 400px; /* Increase height */
+    display: block;
+    margin: 20px auto;
+}
+
