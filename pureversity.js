@@ -35,17 +35,17 @@ function createActivityChart() {
             datasets: [
                 { 
                     label: 'Calls', 
-                    data: [567, 779], 
+                    data: [629, 803], 
                     backgroundColor: '#d32f2f'
                 },
                 { 
                     label: 'Emails', 
-                    data: [552, 662], 
+                    data: [552, 702], 
                     backgroundColor: '#e57373'
                 },
                 { 
                     label: 'Task', 
-                    data: [928, 675], 
+                    data: [1040, 765], 
                     backgroundColor: '#ffcdd2'
                 }
             ]
@@ -66,8 +66,9 @@ function createActivityChart() {
                     font: { size: 18, weight: 'bold' }
                 },
                 datalabels: {
-                    anchor: 'end',
-                    align: 'top',
+                    anchor: 'center',
+                    align: 'center',
+                    color: 'yellow',
                     font: {
                         weight: 'bold'
                     },
@@ -116,7 +117,7 @@ function createSuccessChart() {
             datasets: [
                 { 
                     label: 'Appointments', 
-                    data: [14, 4], 
+                    data: [14, 5], 
                     backgroundColor: '#d32f2f'
                 },
                 { 
@@ -142,8 +143,9 @@ function createSuccessChart() {
                     font: { size: 18, weight: 'bold' }
                 },
                 datalabels: {
-                    anchor: 'end',
-                    align: 'top',
+                    anchor: 'center',
+                    align: 'center',
+                    color: 'yellow',
                     font: {
                         weight: 'bold'
                     },
