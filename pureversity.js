@@ -70,7 +70,8 @@ function createActivityChart() {
                     align: 'center',
                     color: 'yellow',
                     font: {
-                        weight: 'bold'
+                        weight: 'bold',
+                        size: 20
                     },
                     formatter: (value) => value // Display the value directly on the bars
                 }
@@ -147,7 +148,8 @@ function createSuccessChart() {
                     align: 'center',
                     color: 'yellow',
                     font: {
-                        weight: 'bold'
+                        weight: 'bold',
+                        size: 20                        
                     },
                     formatter: (value) => value // Display the value directly on the bars
                 }
