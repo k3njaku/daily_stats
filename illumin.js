@@ -43,18 +43,18 @@ function createActivityChart() {
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["Hammad Faisal", "Khuzaima Tahir", "Ahmed Ali", "Amjad Baig", "Ali Murtaza"],
+            labels: ["Hammad Faisal", "Khuzaima Tahir", "Ali Murtaza", "Amjad Baig", "Ahmed Ali"],
             datasets: [
                 {
                     label: 'Calls',
-                    data: [730, 62, 1011, 1094, 636],
+                    data: [730, 64, 687, 1144, 1102],
                     backgroundColor: '#8A2BE2',
                     barThickness: 'flex',
                     barPercentage: 0.7,
                 },
                 {
                     label: 'Email',
-                    data: [6761, 50, 2829, 170, 6709],
+                    data: [7140, 51, 7157, 170, 2833],
                     backgroundColor: '#FF6347',
                     barThickness: 'flex',
                     barPercentage: 0.7,
@@ -83,8 +83,8 @@ function createActivityChart() {
                     },
                 },
                 datalabels: {
-                    anchor: 'end', // Position at the end of the bar
-                    align: 'top', // Align label outside or at the edge of the bar
+                    anchor: 'center', // Position at the end of the bar
+                    align: 'center', // Align label outside or at the edge of the bar
                     color: 'black',
                     font: {
                         size: 12, // Set font size for readability
@@ -136,18 +136,18 @@ function createSuccessChart() {
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["Hammad Faisal", "Khuzaima Tahir", "Ahmed Ali", "Amjad Baig", "Ali Murtaza"],
+            labels: ["Hammad Faisal", "Khuzaima Tahir", "Ali Murtaza", "Amjad Baig", "Ahmed Ali"],
             datasets: [
                 {
                     label: 'Sched Appt',
-                    data: [10, 3, 2, 1, 5],
+                    data: [10, 3, 5, 2, 2],
                     backgroundColor: '#FFD700',
                     barThickness: 'flex',
                     barPercentage: 0.7,
                 },
                 {
                     label: 'Showups',
-                    data: [10, 3, 2, 1, 6],
+                    data: [10, 3, 7, 1, 2],
                     backgroundColor: '#32CD32',
                     barThickness: 'flex',
                     barPercentage: 0.7,
@@ -189,8 +189,8 @@ function createSuccessChart() {
                     },
                 },
                 datalabels: {
-                    anchor: 'end',
-                    align: 'end',
+                    anchor: 'top',
+                    align: 'center',
                     color: 'black',
                     font: {
                         size: 12,
