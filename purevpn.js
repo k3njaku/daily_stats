@@ -12,12 +12,12 @@ function createActivityChart() {
             datasets: [
                 { 
                     label: 'Calls', 
-                    data: [594, 397], 
+                    data: [738, 432], 
                     backgroundColor: '#4a148c'
                 },
                 { 
                     label: 'Connected', 
-                    data: [181, 93], 
+                    data: [222, 103], 
                     backgroundColor: '#9575cd'
                 }
             ]
@@ -76,7 +76,7 @@ function createSuccessChart() {
             datasets: [
                 { 
                     label: 'Appointments', 
-                    data: [8, 9], 
+                    data: [8, 10], 
                     backgroundColor: '#4dd0e1' 
                 },
                 { 
