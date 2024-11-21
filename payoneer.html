@@ -98,7 +98,7 @@
     <!-- Daily Table -->
     <div class="table-container" id="daily-table">
         <div class="table-header">
-            19-Nov-2024<br>Payoneer Daily
+            20-Nov-2024<br>Payoneer Daily
         </div>
         <table>
             <thead>
@@ -113,17 +113,17 @@
             <tbody>
                 <tr>
                     <td>Maryam</td>
-                    <td>59</td>
-                    <td>32</td>
-                    <td>1:03:09</td>
-                    <td>4</td>
+                    <td>46</td>
+                    <td>25</td>
+                    <td>0:51:46</td>
+                    <td>3</td>
                 </tr>
                 <tr>
                     <td>Mehwish</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <td>78</td>
+                    <td>36</td>
+                    <td>0:46:31</td>
+                    <td>2</td>
                 </tr>
             </tbody>
         </table>
@@ -149,21 +149,21 @@
             <tbody>
                 <tr>
                     <td>Maryam</td>
-                    <td>828</td>
-                    <td>392</td>
-                    <td>9:00:11</td>
-                    <td>24</td>
-                    <td>18</td>
-                    <td>75.00%</td>
+                    <td>874</td>
+                    <td>417</td>
+                    <td>9:51:57</td>
+                    <td>27</td>
+                    <td>19</td>
+                    <td>70.37%</td>
                 </tr>
                 <tr>
                     <td>Mehwish</td>
-                    <td>986</td>
-                    <td>461</td>
-                    <td>10:18:25</td>
-                    <td>20</td>
+                    <td>1064</td>
+                    <td>497</td>
+                    <td>11:04:56</td>
+                    <td>22</td>
                     <td>18</td>
-                    <td>90.00%</td>
+                    <td>81.82%</td>
                 </tr>
             </tbody>
         </table>
@@ -192,12 +192,12 @@
                     datasets: [
                         {
                             label: 'Dials',
-                            data: [828, 986],
+                            data: [874, 1064],
                             backgroundColor: '#FF4500',
                         },
                         {
                             label: 'Connected',
-                            data: [392, 461],
+                            data: [417, 497],
                             backgroundColor: '#1E90FF',
                         }
                     ]
@@ -228,10 +228,11 @@
                             align: 'center',
                         },
                         datalabels: {
-                            anchor: 'end',
+                            anchor: 'center',
                             align: 'top',
+                            color: 'white', // Set label color to white
                             font: {
-                                weight: 'bold'
+                                weight: 'bold',
                             },
                             formatter: function (value) {
                                 return value;
@@ -264,6 +265,7 @@
 
 
 
+
         // Initial Chart.js configuration for the second chart
         let successChart;
 
@@ -276,12 +278,12 @@
                     datasets: [
                         {
                             label: 'Appointments',
-                            data: [24, 20],
+                            data: [27, 27],
                             backgroundColor: '#1E90FF',
                         },
                         {
                             label: 'Showups',
-                            data: [18, 18],
+                            data: [19, 18],
                             backgroundColor: '#FF6347',
                         }
                     ]
@@ -312,10 +314,11 @@
                             align: 'center',
                         },
                         datalabels: {
-                            anchor: 'end',
+                            anchor: 'center',
                             align: 'top',
+                            color: 'white', // Set label color to white
                             font: {
-                                weight: 'bold'
+                                weight: 'bold',
                             },
                             formatter: function (value) {
                                 return value;
@@ -344,6 +347,7 @@
                 plugins: [ChartDataLabels]  // Register the data labels plugin
             });
         }
+
 
 
 
