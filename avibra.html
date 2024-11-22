@@ -67,6 +67,7 @@
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 </head>
 
 <body>
@@ -77,7 +78,7 @@
     <!-- Daily Table -->
     <div class="table-container" id="daily-table">
         <div class="table-header-daily">
-            20-Nov-2024<br>Avibra Daily
+            21-Nov-2024<br>Avibra Daily
         </div>
         <table>
             <thead>
@@ -92,18 +93,18 @@
             <tbody>
                 <tr>
                     <td>Earnest</td>
-                    <td>190</td>
+                    <td>218</td>
+                    <td>6</td>
                     <td>0</td>
-                    <td>0</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Jayden</td>
-                    <td>116</td>
-                    <td>24</td>
-                    <td>4</td>
                     <td>&nbsp;</td>
-                </tr>
+                    </tr>
+                    <tr>
+                    <td>Jayden</td>
+                    <td>178</td>
+                    <td>62</td>
+                    <td>3</td>
+                    <td>&nbsp;</td>
+                    </tr>
             </tbody>
         </table>
     </div>
@@ -128,22 +129,22 @@
             <tbody>
                 <tr>
                     <td>Earnest</td>
-                    <td>1590</td>
-                    <td>549</td>
+                    <td>1707</td>
+                    <td>555</td>
                     <td>447</td>
                     <td>8</td>
                     <td>3</td>
                     <td>&nbsp;</td>
-                </tr>
-                <tr>
+                    </tr>
+                    <tr>
                     <td>Jayden</td>
-                    <td>1275</td>
-                    <td>575</td>
+                    <td>1421</td>
+                    <td>656</td>
                     <td>838</td>
                     <td>1</td>
-                    <td>0</td>
                     <td>&nbsp;</td>
-                </tr>
+                    <td>&nbsp;</td>
+                    </tr>
             </tbody>
         </table>
     </div>
@@ -160,109 +161,164 @@
 
     <script>
         function createActivitiesChart() {
-            const ctx = document.getElementById('activitiesChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Earnest', 'Jayden'],
-                    datasets: [
-                        {
-                            label: 'Dials',
-                            data: [1590, 1275],
-                            backgroundColor: '#8A2BE2'
-                        },
-                        {
-                            label: 'Email',
-                            data: [549, 575],
-                            backgroundColor: '#9370DB'
-                        },
-                        {
-                            label: 'Tasks',
-                            data: [447, 838],
-                            backgroundColor: '#DDA0DD'
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    animation: {
-                        duration: 1500,
-                        easing: 'easeOutBounce'
+        const ctx = document.getElementById('activitiesChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Earnest', 'Jayden'],
+                datasets: [
+                    {
+                        label: 'Dials',
+                        data: [1707, 1421],
+                        backgroundColor: '#8A2BE2'
                     },
-                    plugins: {
-                        legend: {
-                            display: true,
-                            position: 'top'
-                        },
-                        title: {
-                            display: true,
-                            text: 'Activities',
+                    {
+                        label: 'Email',
+                        data: [555, 656],
+                        backgroundColor: '#9370DB'
+                    },
+                    {
+                        label: 'Tasks',
+                        data: [447, 838],
+                        backgroundColor: '#DDA0DD'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                animation: {
+                    duration: 1500,
+                    easing: 'easeOutBounce'
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
                             font: {
-                                size: 18,
                                 weight: 'bold'
                             }
                         }
                     },
-                    scales: {
-                        y: {
+                    title: {
+                        display: true,
+                        text: 'Activities',
+                        font: {
+                            size: 18,
+                            weight: 'bold'
+                        }
+                    },
+                    datalabels: {
+                        color: '#000',
+                        anchor: 'end',
+                        align: 'top',
+                        font: {
+                            weight: 'bold'
+                        },
+                        formatter: (value) => value // Display bar values
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            font: {
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            font: {
+                                weight: 'bold'
+                            },
                             beginAtZero: true,
-                            max: 1500 // Retained the maximum y-axis value for consistency
+                            max: 1500
                         }
                     }
                 }
-            });
-        }
+            },
+            plugins: [ChartDataLabels]
+        });
+    }
 
 
 
-        function createSuccessChart() {
-            const ctx = document.getElementById('successChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Earnest', 'Jayden'],
-                    datasets: [
-                        {
-                            label: 'Apt Scheduled',
-                            data: [8, 1],
-                            backgroundColor: '#1E90FF'
-                        },
-                        {
-                            label: 'Showups',
-                            data: [3, 0],
-                            backgroundColor: '#FF6347'
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    animation: {
-                        duration: 1500,
-                        easing: 'easeOutBounce'
+    function createSuccessChart() {
+        const ctx = document.getElementById('successChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Earnest', 'Jayden'],
+                datasets: [
+                    {
+                        label: 'Apt Scheduled',
+                        data: [8, 1],
+                        backgroundColor: '#1E90FF'
                     },
-                    plugins: {
-                        legend: {
-                            display: true,
-                            position: 'top'
-                        },
-                        title: {
-                            display: true,
-                            text: 'Success',
+                    {
+                        label: 'Showups',
+                        data: [3, 0],
+                        backgroundColor: '#FF6347'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                animation: {
+                    duration: 1500,
+                    easing: 'easeOutBounce'
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
                             font: {
-                                size: 18,
                                 weight: 'bold'
                             }
                         }
                     },
-                    scales: {
-                        y: {
+                    title: {
+                        display: true,
+                        text: 'Success',
+                        font: {
+                            size: 18,
+                            weight: 'bold'
+                        }
+                    },
+                    datalabels: {
+                        color: '#000',
+                        anchor: 'end',
+                        align: 'top',
+                        font: {
+                            weight: 'bold'
+                        },
+                        formatter: (value) => value // Display bar values
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            font: {
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            font: {
+                                weight: 'bold'
+                            },
                             beginAtZero: true,
                             max: 5
                         }
                     }
                 }
-            });
-        }
+            },
+            plugins: [ChartDataLabels]
+        });
+    }
+
 
 
         window.onload = function () {
