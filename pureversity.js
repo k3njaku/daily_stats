@@ -35,7 +35,7 @@ function createActivityChart() {
             datasets: [
                 { 
                     label: 'Calls', 
-                    data: [741, 811], 
+                    data: [793, 811], 
                     backgroundColor: '#d32f2f'
                 },
                 { 
@@ -45,7 +45,7 @@ function createActivityChart() {
                 },
                 { 
                     label: 'Task', 
-                    data: [1116, 857], 
+                    data: [1214, 929], 
                     backgroundColor: '#ffcdd2'
                 }
             ]
