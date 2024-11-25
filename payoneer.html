@@ -98,7 +98,7 @@
     <!-- Daily Table -->
     <div class="table-container" id="daily-table">
         <div class="table-header">
-            21-Nov-2024<br>Payoneer Daily
+            22-Nov-2024<br>Payoneer Daily
         </div>
         <table>
             <thead>
@@ -113,18 +113,18 @@
             <tbody>
                 <tr>
                     <td>Maryam</td>
-                    <td>61</td>
-                    <td>32</td>
-                    <td>0:36:46</td>
-                    <td>3</td>
-                </tr>
-                <tr>
+                    <td>35</td>
+                    <td>20</td>
+                    <td>0:20:37</td>
+                    <td>2</td>
+                    </tr>
+                    <tr>
                     <td>Mehwish</td>
-                    <td>54</td>
-                    <td>27</td>
-                    <td>0:47:42</td>
-                    <td>3</td>
-                </tr>
+                    <td>22</td>
+                    <td>14</td>
+                    <td>0:25:28</td>
+                    <td>2</td>
+                    </tr>
             </tbody>
         </table>
     </div>
@@ -148,23 +148,23 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Mehwish</td>
-                    <td>1118</td>
-                    <td>524</td>
-                    <td>11:52:38</td>
-                    <td>25</td>
-                    <td>21</td>
-                    <td>84.00%</td>
-                </tr>
-                <tr>
                     <td>Maryam</td>
-                    <td>935</td>
-                    <td>449</td>
-                    <td>10:28:43</td>
-                    <td>30</td>
-                    <td>20</td>
-                    <td>66.67%</td>
-                </tr>
+                    <td>970</td>
+                    <td>469</td>
+                    <td>10:49:20</td>
+                    <td>32</td>
+                    <td>21</td>
+                    <td>65.63%</td>
+                    </tr>
+                    <tr>
+                    <td>Mehwish</td>
+                    <td>1140</td>
+                    <td>538</td>
+                    <td>12:18:06</td>
+                    <td>27</td>
+                    <td>21</td>
+                    <td>77.78%</td>
+                    </tr>
             </tbody>
         </table>
     </div>
@@ -188,16 +188,16 @@
             dialsChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Mehwish', 'Maryam'],
+                    labels: ['Maryam', 'Mehwish'],
                     datasets: [
                         {
                             label: 'Dials',
-                            data: [1118, 935],
+                            data: [970, 1140],
                             backgroundColor: '#FF4500',
                         },
                         {
                             label: 'Connected',
-                            data: [524, 449],
+                            data: [469, 538],
                             backgroundColor: '#1E90FF',
                         }
                     ]
@@ -274,16 +274,16 @@
             successChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Mehwish', 'Maryam'],
+                    labels: ['Maryam', 'Mehwish'],
                     datasets: [
                         {
                             label: 'Appointments',
-                            data: [25, 30],
+                            data: [32, 27],
                             backgroundColor: '#1E90FF',
                         },
                         {
                             label: 'Showups',
-                            data: [21, 20],
+                            data: [21, 21],
                             backgroundColor: '#FF6347',
                         }
                     ]
