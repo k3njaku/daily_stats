@@ -12,12 +12,12 @@ function createActivityChart() {
             datasets: [
                 { 
                     label: 'Calls', 
-                    data: [931, 507], 
+                    data: [953, 525], 
                     backgroundColor: '#4a148c'
                 },
                 { 
                     label: 'Connected', 
-                    data: [288, 121], 
+                    data: [296, 125], 
                     backgroundColor: '#9575cd'
                 }
             ]
