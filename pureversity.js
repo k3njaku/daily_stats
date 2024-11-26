@@ -35,17 +35,17 @@ function createActivityChart() {
             datasets: [
                 { 
                     label: 'Calls', 
-                    data: [793, 811], 
+                    data: [867, 821], 
                     backgroundColor: '#d32f2f'
                 },
                 { 
                     label: 'Emails', 
-                    data: [552, 804], 
+                    data: [602, 804], 
                     backgroundColor: '#e57373'
                 },
                 { 
                     label: 'Task', 
-                    data: [1214, 929], 
+                    data: [1258, 949], 
                     backgroundColor: '#ffcdd2'
                 }
             ]
@@ -94,10 +94,11 @@ function createActivityChart() {
                         font: { weight: 'bold', size: 14 }
                     },
                     ticks: {
-                        font: { weight: 'bold' }
+                        font: { weight: 'bold' },
+                        stepSize: 500
                     },
                     beginAtZero: true,
-                    max: 800,
+                    max: 1500,
                 },
             },
         },
@@ -118,7 +119,7 @@ function createSuccessChart() {
             datasets: [
                 { 
                     label: 'Appointments', 
-                    data: [14, 6], 
+                    data: [14, 7], 
                     backgroundColor: '#d32f2f'
                 },
                 { 
@@ -172,10 +173,11 @@ function createSuccessChart() {
                         font: { weight: 'bold', size: 14 }
                     },
                     ticks: {
-                        font: { weight: 'bold' }
+                        font: { weight: 'bold' },
+                        stepSize: 4
                     },
                     beginAtZero: true,
-                    max: 12, // Adjusted to fit the highest value
+                    max: 20, // Adjusted to fit the highest value
                 },
             },
         },
