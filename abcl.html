@@ -79,7 +79,7 @@
     <!-- Daily Table -->
     <div class="table-container" id="daily-table">
         <div class="table-header-daily">
-            22-Nov-2024<br>ABCL Daily
+            25-Nov-2024<br>ABCL Daily
         </div>
         <table>
             <thead>
@@ -94,23 +94,16 @@
             <tbody>
                 <tr>
                     <td>Asim</td>
-                    <td>95</td>
-                    <td>173</td>
-                    <td>169</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>Iqra</td>
-                    <td>0</td>
+                    <td>32</td>
                     <td>191</td>
-                    <td>0</td>
+                    <td>235</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>Usman</td>
-                    <td>91</td>
+                    <td>15</td>
                     <td>0</td>
-                    <td>124</td>
+                    <td>549</td>
                     <td>&nbsp;</td>
                 </tr>
             </tbody>
@@ -137,29 +130,20 @@
             <tbody>
                 <tr>
                     <td>Usman</td>
-                    <td>1176</td>
+                    <td>1191</td>
                     <td>264</td>
-                    <td>863</td>
+                    <td>1412</td>
                     <td>8</td>
                     <td>7</td>
                     <td>1</td>
                 </tr>
                 <tr>
                     <td>Asim</td>
-                    <td>1110</td>
-                    <td>1408</td>
-                    <td>1903</td>
+                    <td>1152</td>
+                    <td>1599</td>
+                    <td>2148</td>
                     <td>1</td>
                     <td>3</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>Iqra</td>
-                    <td>812</td>
-                    <td>1387</td>
-                    <td>667</td>
-                    <td>2</td>
-                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
             </tbody>
@@ -177,26 +161,27 @@
     </div>
 
     <script>
+
         function createActivityChart() {
             const ctx = document.getElementById('activityChart').getContext('2d');
             new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Usman', 'Asim', 'Iqra'],
+                    labels: ['Usman', 'Asim'],
                     datasets: [
                         {
                             label: 'Dials',
-                            data: [1085, 1087, 812],
+                            data: [1191, 1152],
                             backgroundColor: '#1E90FF' // Blue for Dials
                         },
                         {
                             label: 'Email',
-                            data: [248, 1209, 1246],
+                            data: [264, 1599],
                             backgroundColor: '#FF6347' // Red for Email
                         },
                         {
                             label: 'Tasks',
-                            data: [739, 1706, 667],
+                            data: [1412, 2148],
                             backgroundColor: '#FFBF00' // Yellow for Tasks
                         }
                     ]
@@ -226,9 +211,9 @@
                             }
                         },
                         datalabels: {
-                            anchor: 'center',
+                            anchor: 'end',
                             align: 'top',
-                            color: 'white',
+                            color: 'black',
                             font: {
                                 weight: 'bold' // Bold data labels
                             },
@@ -245,8 +230,9 @@
                         },
                         y: {
                             beginAtZero: true,
-                            max: 1300, // Adjusted maximum y-axis value
+                            max: 2500, // Increased to accommodate the highest value
                             ticks: {
+                                stepSize: 500, // Adding step size for better readability
                                 font: {
                                     weight: 'bold' // Bold y-axis labels
                                 }
@@ -257,90 +243,91 @@
                 plugins: [ChartDataLabels] // Enables data labels on bars
             });
         }
-
 
 
 
         function createSuccessChart() {
-            const ctx = document.getElementById('successChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Usman', 'Asim', 'Iqra'],
-                    datasets: [
-                        {
-                            label: 'Appt Scheduled',
-                            data: [8, 1, 2],
-                            backgroundColor: '#1E90FF' // Blue for Appt Scheduled
-                        },
-                        {
-                            label: 'Showups',
-                            data: [6, 3, 0],
-                            backgroundColor: '#32CD32' // Green for Showups
-                        },
-                        {
-                            label: 'Opps',
-                            data: [1, 0, 0],
-                            backgroundColor: '#FFA500' // Orange for Opps
-                        }
-                    ]
+    const ctx = document.getElementById('successChart').getContext('2d'); // Changed the canvas ID
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Usman', 'Asim'], // X-axis labels
+            datasets: [
+                {
+                    label: 'Appt Scheduled',
+                    data: [8, 1], // Data for Appt Scheduled
+                    backgroundColor: '#1E90FF' // Blue for Appt Scheduled
                 },
-                options: {
-                    responsive: true,
-                    animation: {
-                        duration: 1500,
-                        easing: 'easeOutBounce'
-                    },
-                    plugins: {
-                        legend: {
-                            display: true,
-                            position: 'top',
-                            labels: {
-                                font: {
-                                    weight: 'bold' // Bold legend labels
-                                }
-                            }
-                        },
-                        title: {
-                            display: true,
-                            text: 'Success',
-                            font: {
-                                size: 18,
-                                weight: 'bold' // Bold chart title
-                            }
-                        },
-                        datalabels: {
-                            anchor: 'center',
-                            align: 'top',
-                            color: 'white',
-                            font: {
-                                weight: 'bold' // Bold data labels
-                            },
-                            formatter: (value) => value // Display the value on top of each bar
-                        }
-                    },
-                    scales: {
-                        x: {
-                            ticks: {
-                                font: {
-                                    weight: 'bold' // Bold x-axis labels
-                                }
-                            }
-                        },
-                        y: {
-                            beginAtZero: true,
-                            max: 6, // Adjusted maximum y-axis value
-                            ticks: {
-                                font: {
-                                    weight: 'bold' // Bold y-axis labels
-                                }
-                            }
+                {
+                    label: 'Showups',
+                    data: [7, 3], // Data for Showups
+                    backgroundColor: '#32CD32' // Green for Showups
+                },
+                {
+                    label: 'Opps',
+                    data: [1, 1], // Data for Opps
+                    backgroundColor: '#FFA500' // Orange for Opps
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            animation: {
+                duration: 1500,
+                easing: 'easeOutBounce'
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        font: {
+                            weight: 'bold' // Bold legend labels
                         }
                     }
                 },
-                plugins: [ChartDataLabels] // Enables data labels on bars
-            });
-        }
+                title: {
+                    display: true,
+                    text: 'Success', // Updated chart title
+                    font: {
+                        size: 18,
+                        weight: 'bold' // Bold chart title
+                    }
+                },
+                datalabels: {
+                    anchor: 'end',
+                    align: 'top',
+                    color: 'black',
+                    font: {
+                        weight: 'bold' // Bold data labels
+                    },
+                    formatter: (value) => value // Display the value on top of each bar
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        font: {
+                            weight: 'bold' // Bold x-axis labels
+                        }
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    max: 10, // Adjusted to fit the range of the new data
+                    ticks: {
+                        stepSize: 2, // Adding step size for better readability
+                        font: {
+                            weight: 'bold' // Bold y-axis labels
+                        }
+                    }
+                }
+            }
+        },
+        plugins: [ChartDataLabels] // Enables data labels on bars
+    });
+}
+
 
 
 
