@@ -12,12 +12,12 @@ function createActivityChart() {
             datasets: [
                 { 
                     label: 'Calls', 
-                    data: [953, 525], 
+                    data: [1000, 550], 
                     backgroundColor: '#4a148c'
                 },
                 { 
                     label: 'Connected', 
-                    data: [296, 125], 
+                    data: [308, 127], 
                     backgroundColor: '#9575cd'
                 }
             ]
@@ -59,7 +59,7 @@ function createActivityChart() {
                         font: { weight: 'bold', size: 14 }
                     },
                     beginAtZero: true,
-                    max: 800, // Adjusted to match the chart
+                    max: 1200, // Adjusted to match the chart
                 },
             },
         },
