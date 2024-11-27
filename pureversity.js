@@ -35,17 +35,17 @@ function createActivityChart() {
             datasets: [
                 { 
                     label: 'Calls', 
-                    data: [867, 821], 
+                    data: [867, 851], 
                     backgroundColor: '#d32f2f'
                 },
                 { 
                     label: 'Emails', 
-                    data: [602, 804], 
+                    data: [640, 838], 
                     backgroundColor: '#e57373'
                 },
                 { 
                     label: 'Task', 
-                    data: [1258, 949], 
+                    data: [1305, 996], 
                     backgroundColor: '#ffcdd2'
                 }
             ]
@@ -119,7 +119,7 @@ function createSuccessChart() {
             datasets: [
                 { 
                     label: 'Appointments', 
-                    data: [14, 7], 
+                    data: [14, 8], 
                     backgroundColor: '#d32f2f'
                 },
                 { 
