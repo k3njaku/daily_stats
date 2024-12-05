@@ -94,16 +94,16 @@
             <tbody>
                 <tr>
                     <td>Asim</td>
-                    <td>84</td>
-                    <td>352</td>
-                    <td>77</td>
+                    <td>64</td>
+                    <td>106</td>
+                    <td>192</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>Usman</td>
-                    <td>25</td>
-                    <td>7</td>
-                    <td>218</td>
+                    <td>84</td>
+                    <td>3</td>
+                    <td>316</td>
                     <td>&nbsp;</td>
                 </tr>
             </tbody>
@@ -130,18 +130,18 @@
             <tbody>
                 <tr>
                     <td>Asim</td>
-                    <td>142</td>
-                    <td>352</td>
-                    <td>94</td>
+                    <td>201</td>
+                    <td>398</td>
+                    <td>239</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>Usman</td>
-                    <td>25</td>
-                    <td>7</td>
-                    <td>248</td>
+                    <td>241</td>
+                    <td>10</td>
+                    <td>347</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -171,17 +171,17 @@
                     datasets: [
                         {
                             label: 'Dials',
-                            data: [142, 25],
+                            data: [201, 241],
                             backgroundColor: '#1E90FF' // Blue for Dials
                         },
                         {
                             label: 'Email',
-                            data: [352, 7],
+                            data: [398, 10],
                             backgroundColor: '#FF6347' // Red for Email
                         },
                         {
                             label: 'Tasks',
-                            data: [94, 248],
+                            data: [239, 347],
                             backgroundColor: '#FFBF00' // Yellow for Tasks
                         }
                     ]
@@ -247,86 +247,86 @@
 
 
         function createSuccessChart() {
-    const ctx = document.getElementById('successChart').getContext('2d'); // Changed the canvas ID
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Usman', 'Asim'], // X-axis labels
-            datasets: [
-                {
-                    label: 'Appt Scheduled',
-                    data: [0, 0], // Data for Appt Scheduled
-                    backgroundColor: '#1E90FF' // Blue for Appt Scheduled
-                },
-                {
-                    label: 'Showups',
-                    data: [0, 0], // Data for Showups
-                    backgroundColor: '#32CD32' // Green for Showups
-                },
-                {
-                    label: 'Opps',
-                    data: [0, 0], // Data for Opps
-                    backgroundColor: '#FFA500' // Orange for Opps
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            animation: {
-                duration: 1500,
-                easing: 'easeOutBounce'
-            },
-            plugins: {
-                legend: {
-                    display: true,
-                    position: 'top',
-                    labels: {
-                        font: {
-                            weight: 'bold' // Bold legend labels
+            const ctx = document.getElementById('successChart').getContext('2d'); // Changed the canvas ID
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Usman', 'Asim'], // X-axis labels
+                    datasets: [
+                        {
+                            label: 'Appt Scheduled',
+                            data: [0, 0], // Data for Appt Scheduled
+                            backgroundColor: '#1E90FF' // Blue for Appt Scheduled
+                        },
+                        {
+                            label: 'Showups',
+                            data: [0, 0], // Data for Showups
+                            backgroundColor: '#32CD32' // Green for Showups
+                        },
+                        {
+                            label: 'Opps',
+                            data: [0, 0], // Data for Opps
+                            backgroundColor: '#FFA500' // Orange for Opps
                         }
-                    }
+                    ]
                 },
-                title: {
-                    display: true,
-                    text: 'Success', // Updated chart title
-                    font: {
-                        size: 18,
-                        weight: 'bold' // Bold chart title
-                    }
-                },
-                datalabels: {
-                    anchor: 'end',
-                    align: 'top',
-                    color: 'black',
-                    font: {
-                        weight: 'bold' // Bold data labels
+                options: {
+                    responsive: true,
+                    animation: {
+                        duration: 1500,
+                        easing: 'easeOutBounce'
                     },
-                    formatter: (value) => value // Display the value on top of each bar
-                }
-            },
-            scales: {
-                x: {
-                    ticks: {
-                        font: {
-                            weight: 'bold' // Bold x-axis labels
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top',
+                            labels: {
+                                font: {
+                                    weight: 'bold' // Bold legend labels
+                                }
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Success', // Updated chart title
+                            font: {
+                                size: 18,
+                                weight: 'bold' // Bold chart title
+                            }
+                        },
+                        datalabels: {
+                            anchor: 'end',
+                            align: 'top',
+                            color: 'black',
+                            font: {
+                                weight: 'bold' // Bold data labels
+                            },
+                            formatter: (value) => value // Display the value on top of each bar
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                font: {
+                                    weight: 'bold' // Bold x-axis labels
+                                }
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            max: 10, // Adjusted to fit the range of the new data
+                            ticks: {
+                                stepSize: 2, // Adding step size for better readability
+                                font: {
+                                    weight: 'bold' // Bold y-axis labels
+                                }
+                            }
                         }
                     }
                 },
-                y: {
-                    beginAtZero: true,
-                    max: 10, // Adjusted to fit the range of the new data
-                    ticks: {
-                        stepSize: 2, // Adding step size for better readability
-                        font: {
-                            weight: 'bold' // Bold y-axis labels
-                        }
-                    }
-                }
-            }
-        },
-        plugins: [ChartDataLabels] // Enables data labels on bars
-    });
-}
+                plugins: [ChartDataLabels] // Enables data labels on bars
+            });
+        }
 
 
 
