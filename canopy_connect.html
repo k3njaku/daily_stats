@@ -131,7 +131,7 @@
     <!-- Container for daily table data with fade-in effect -->
     <div class="table-container" id="daily-table">
         <div class="table-header">
-            27-Nov-2024<br>CanopyConnect Daily
+            03-Dec-2024<br>CanopyConnect Daily
         </div>
         <table>
             <thead>
@@ -148,49 +148,33 @@
                 <tr>
                     <td>Daniyal</td>
                     <td>51</td>
-                    <td>67</td>
-                    <td>39</td>
-                    <td>&nbsp;</td>
+                    <td>41</td>
+                    <td>51</td>
+                    <td>1</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>Gareth</td>
-                    <td>79</td>
-                    <td>60</td>
-                    <td>76</td>
+                    <td>25</td>
+                    <td>7</td>
+                    <td>25</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>Ibrahim</td>
-                    <td>49</td>
-                    <td>0</td>
-                    <td>38</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>Vivek</td>
                     <td>40</td>
-                    <td>77</td>
-                    <td>43</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>Webster</td>
-                    <td>49</td>
                     <td>36</td>
-                    <td>15</td>
+                    <td>40</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr style="font-weight: bold;">
                     <td>Grand Total</td>
-                    <td>268</td>
-                    <td>240</td>
-                    <td>211</td>
-                    <td>0</td>
+                    <td>116</td>
+                    <td>84</td>
+                    <td>116</td>
+                    <td>1</td>
                     <td>0</td>
                 </tr>
             </tbody>
@@ -200,7 +184,7 @@
     <!-- Container for monthly table data with fade-in effect -->
     <div class="table-container" id="monthly-table">
         <div class="table-header-monthly">
-            November<br>CanopyConnect Monthly
+            December<br>CanopyConnect Monthly
         </div>
         <table>
             <thead>
@@ -218,63 +202,43 @@
             <tbody>
                 <tr>
                     <td>Ibrahim</td>
-                    <td>225</td>
-                    <td>214</td>
-                    <td>614</td>
-                    <td>6</td>
-                    <td>3</td>
-                    <td>3</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>Vivek</td>
-                    <td>153</td>
-                    <td>281</td>
-                    <td>303</td>
-                    <td>4</td>
-                    <td>4</td>
+                    <td>40</td>
+                    <td>36</td>
+                    <td>66</td>
+                    <td>&nbsp;</td>
                     <td>2</td>
-                    <td>2</td>
+                    <td>1</td>
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>Daniyal</td>
-                    <td>587</td>
-                    <td>490</td>
-                    <td>455</td>
-                    <td>3</td>
-                    <td>6</td>
-                    <td>4</td>
+                    <td>51</td>
+                    <td>41</td>
+                    <td>47</td>
+                    <td>1</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>Gareth</td>
-                    <td>807</td>
-                    <td>444</td>
-                    <td>954</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>1</td>
+                    <td>25</td>
+                    <td>7</td>
+                    <td>70</td>
                     <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>Webster</td>
-                    <td>97</td>
-                    <td>188</td>
-                    <td>173</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr style="font-weight: bold;">
                     <td>Grand Total</td>
-                    <td>1869</td>
-                    <td>1617</td>
-                    <td>2499</td>
-                    <td>16</td>
-                    <td>16</td>
-                    <td>11</td>
-                    <td>5</td>
+                    <td>76</td>
+                    <td>48</td>
+                    <td>117</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
                 </tr>
             </tbody>
         </table>
@@ -299,7 +263,7 @@
             dialsChart = new Chart(ctx, {
                 type: 'bar', // Defines a bar chart
                 data: {
-                    labels: ["Ibrahim", "Vivek", "Daniyal", "Gareth", "Webster"], // SDR names as x-axis labels
+                    labels: ["Ibrahim", "Daniyal", "Gareth"], // SDR names as x-axis labels
                     datasets: [
                         {
                             label: 'Email', // Label for Email dataset
@@ -308,12 +272,12 @@
                         },
                         {
                             label: 'Tasks', // Label for Tasks dataset
-                            data: [214, 281, 490, 444, 188], // Data for Tasks
+                            data: [36, 41, 7], // Data for Tasks
                             backgroundColor: '#1E90FF', // Color of Tasks bars
                         },
                         {
                             label: 'Calls', // Label for Calls dataset
-                            data: [614, 303, 455, 954, 173], // Data for Calls
+                            data: [66, 47, 70], // Data for Calls
                             backgroundColor: '#32CD32', // Color of Calls bars
                         }
                     ]
@@ -385,17 +349,17 @@
                     datasets: [
                         {
                             label: 'Appointments',
-                            data: [6, 4, 3, 2, 1], // Data for Appointments
+                            data: [0, 1, 0], // Data for Appointments
                             backgroundColor: '#1E90FF', // Color for Appointments bars
                         },
                         {
                             label: 'Dues',
-                            data: [3, 4, 6, 2, 1],
+                            data: [2, 0, 0],
                             backgroundColor: 'Yellow',
                         },
                         {
                             label: 'Showups',
-                            data: [3, 2, 4, 1, 1], // Data for Showups
+                            data: [1, 0, 0], // Data for Showups
                             backgroundColor: '#32CD32', // Color for Showups bars
                         },
                         {

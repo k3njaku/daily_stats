@@ -98,7 +98,7 @@
     <!-- Daily Table -->
     <div class="table-container" id="daily-table">
         <div class="table-header">
-            03-Dec-2024<br>Payoneer Daily
+            04-Dec-2024<br>Payoneer Daily
         </div>
         <table>
             <thead>
@@ -112,18 +112,18 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Mehwish</td>
-                    <td>35</td>
-                    <td>21</td>
-                    <td>0:22:55</td>
-                    <td>2</td>
+                    <td>Maryam</td>
+                    <td>52</td>
+                    <td>26</td>
+                    <td>0:58:03</td>
+                    <td>3</td>
                 </tr>
                 <tr>
-                    <td>Maryam</td>
-                    <td>54</td>
-                    <td>23</td>
-                    <td>0:25:25</td>
-                    <td>&nbsp;</td>
+                    <td>Mehwish</td>
+                    <td>47</td>
+                    <td>24</td>
+                    <td>0:21:18</td>
+                    <td>3</td>
                 </tr>
             </tbody>
         </table>
@@ -149,21 +149,21 @@
             <tbody>
                 <tr>
                     <td>Mehwish</td>
-                    <td>69</td>
-                    <td>40</td>
-                    <td>0:49:02</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>150.00%</td>
+                    <td>116</td>
+                    <td>64</td>
+                    <td>1:10:20</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>80.00%</td>
                 </tr>
                 <tr>
                     <td>Maryam</td>
-                    <td>113</td>
-                    <td>47</td>
-                    <td>0:57:02</td>
-                    <td>1</td>
+                    <td>165</td>
+                    <td>73</td>
+                    <td>1:55:05</td>
                     <td>4</td>
-                    <td>400.00%</td>
+                    <td>4</td>
+                    <td>100.00%</td>
                 </tr>
             </tbody>
         </table>
@@ -180,6 +180,9 @@
     </div>
 
     <script>
+        // Register the ChartDataLabels plugin
+        Chart.register(ChartDataLabels);
+
         // Initial Chart.js configuration for the first chart
         let dialsChart;
 
@@ -192,12 +195,12 @@
                     datasets: [
                         {
                             label: 'Dials',
-                            data: [69, 113],
+                            data: [116, 165],
                             backgroundColor: '#FF4500',
                         },
                         {
                             label: 'Connected',
-                            data: [40, 47],
+                            data: [64, 73],
                             backgroundColor: '#1E90FF',
                         }
                     ]
@@ -230,7 +233,7 @@
                         datalabels: {
                             anchor: 'center',
                             align: 'top',
-                            color: 'white', // Set label color to white
+                            color: 'black', // Set label color to white
                             font: {
                                 weight: 'bold',
                             },
@@ -257,14 +260,9 @@
                             }
                         }
                     }
-                },
-                plugins: [ChartDataLabels]  // Register the data labels plugin
+                }
             });
         }
-
-
-
-
 
         // Initial Chart.js configuration for the second chart
         let successChart;
@@ -278,12 +276,12 @@
                     datasets: [
                         {
                             label: 'Appointments',
-                            data: [2, 1],
+                            data: [5, 4],
                             backgroundColor: '#1E90FF',
                         },
                         {
                             label: 'Showups',
-                            data: [3, 4],
+                            data: [4, 4],
                             backgroundColor: '#FF6347',
                         }
                     ]
@@ -316,7 +314,7 @@
                         datalabels: {
                             anchor: 'center',
                             align: 'top',
-                            color: 'white', // Set label color to white
+                            color: 'black', // Set label color to white
                             font: {
                                 weight: 'bold',
                             },
@@ -343,14 +341,9 @@
                             }
                         }
                     }
-                },
-                plugins: [ChartDataLabels]  // Register the data labels plugin
+                }
             });
         }
-
-
-
-
 
         function resetDialsChart() {
             if (dialsChart) {
