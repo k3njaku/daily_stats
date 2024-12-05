@@ -31,21 +31,21 @@ function createActivityChart() {
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Zuhaib', 'Babar'],
+            labels: ['Babar', 'Zuhaib'],
             datasets: [
                 { 
                     label: 'Calls', 
-                    data: [867, 886], 
+                    data: [141, 151], 
                     backgroundColor: '#d32f2f'
                 },
                 { 
                     label: 'Emails', 
-                    data: [720, 862], 
+                    data: [87, 79], 
                     backgroundColor: '#e57373'
                 },
                 { 
                     label: 'Task', 
-                    data: [1498, 1007], 
+                    data: [78, 179], 
                     backgroundColor: '#ffcdd2'
                 }
             ]
@@ -115,16 +115,16 @@ function createSuccessChart() {
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Zuhaib', 'Babar'],
+            labels: ['Babar', 'Zuhaib'],
             datasets: [
                 { 
                     label: 'Appointments', 
-                    data: [14, 9], 
+                    data: [1, 0], 
                     backgroundColor: '#d32f2f'
                 },
                 { 
                     label: 'Showups', 
-                    data: [10, 3], 
+                    data: [0, 0], 
                     backgroundColor: '#ffcdd2'
                 }
             ]
