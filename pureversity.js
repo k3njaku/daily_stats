@@ -1,3 +1,5 @@
+// pureversity.js
+
 document.addEventListener('DOMContentLoaded', function () {
     const elements = [
         document.querySelector('.logo-container'),
@@ -24,7 +26,43 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize charts only after their containers are visible
     setTimeout(createActivityChart, 3000); // 3s delay for the first chart
     setTimeout(createSuccessChart, 4000); // 4s delay for the second chart
+
+    // Apply styling to Total rows after a slight delay to ensure tables are rendered
+    setTimeout(styleTotalRows, 2000);
 });
+
+/**
+ * Function to style rows containing 'Total' by adding the 'total-row' class
+ */
+function styleTotalRows() {
+    // Select all tables with the class 'report-table'
+    const tables = document.querySelectorAll('.report-table');
+
+    tables.forEach(table => {
+        // Iterate through each row in the table body
+        const rows = table.querySelectorAll('tbody tr');
+        rows.forEach(row => {
+            const firstCell = row.querySelector('td');
+            if (firstCell && firstCell.textContent.trim().toLowerCase() === 'total') {
+                // Add the 'total-row' class to the entire row
+                row.classList.add('total-row');
+
+                // Optional: Modify the row content if needed
+                // Example: Update cell values as per your requirement
+                // Uncomment and adjust the following lines if you want to modify the total row
+                /*
+                row.innerHTML = `
+                    <td>Total</td>
+                    <td>292</td>
+                    <td>166</td>
+                    <td>257</td>
+                    <td>1</td>
+                `;
+                */
+            }
+        });
+    });
+}
 
 function createActivityChart() {
     const ctx = document.getElementById('activityChart').getContext('2d');
@@ -106,10 +144,6 @@ function createActivityChart() {
     });
 }
 
-
-
-
-
 function createSuccessChart() {
     const ctx = document.getElementById('successChart').getContext('2d');
     new Chart(ctx, {
@@ -184,4 +218,3 @@ function createSuccessChart() {
         plugins: [ChartDataLabels] // Enable the plugin for data labels
     });
 }
-

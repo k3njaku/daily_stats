@@ -1,3 +1,5 @@
+/* pureversity.css */
+
 /* General Styling */
 body {
     font-family: Arial, sans-serif;
@@ -38,7 +40,12 @@ body {
     color: white;
 }
 
-/* Chart Section */
+/* Highlighted Total Row */
+.total-row {
+    font-weight: bold;
+    background-color: #f0f0f0; /* Optional: Adds a subtle background to distinguish the total row */
+}
+
 /* Chart Section */
 .chart-section {
     width: 60%; /* Adjusted to make the chart container smaller */
@@ -51,4 +58,31 @@ body {
 }
 .visible {
     opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo {
+        max-width: 150px;
+    }
+    .report-table {
+        width: 95%;
+    }
+    .chart-section {
+        width: 90%;
+    }
+}
+
+/* Optional: Adjust table font size for smaller screens */
+@media (min-width: 768px) {
+    .report-table {
+        font-size: 16px; /* Slightly smaller font size for better readability */
+    }
+}
+
+/* Additional Styling for Enhanced Appearance */
+.report-table tbody tr:hover {
+    background-color: #e9e9e9;
+    transform: scale(1.01);
+    transition: transform 0.2s;
 }
