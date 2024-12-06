@@ -98,7 +98,7 @@
     <!-- Daily Table -->
     <div class="table-container" id="daily-table">
         <div class="table-header">
-            04-Dec-2024<br>Payoneer Daily
+            05-Dec-2024<br>Payoneer Daily
         </div>
         <table>
             <thead>
@@ -113,16 +113,23 @@
             <tbody>
                 <tr>
                     <td>Maryam</td>
-                    <td>52</td>
-                    <td>26</td>
-                    <td>0:58:03</td>
+                    <td>36</td>
+                    <td>10</td>
+                    <td>0:22:35</td>
                     <td>3</td>
                 </tr>
                 <tr>
                     <td>Mehwish</td>
-                    <td>47</td>
-                    <td>24</td>
-                    <td>0:21:18</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    </tr>
+                    <tr style="font-weight: bold;">
+                        <td>Total</td>
+                        <td>36</td>
+                        <td>10</td>
+                        <td>0:22:35</td>
                     <td>3</td>
                 </tr>
             </tbody>
@@ -148,22 +155,31 @@
             </thead>
             <tbody>
                 <tr>
+                    <td>Maryam</td>
+                    <td>201</td>
+                    <td>83</td>
+                    <td>2:17:40</td>
+                    <td>7</td>
+                    <td>7</td>
+                    <td>100.00%</td>
+                    </tr>
+                    <tr>
                     <td>Mehwish</td>
                     <td>116</td>
                     <td>64</td>
                     <td>1:10:20</td>
                     <td>5</td>
-                    <td>4</td>
-                    <td>80.00%</td>
+                    <td>6</td>
+                    <td>120.00%</td>
                 </tr>
-                <tr>
-                    <td>Maryam</td>
-                    <td>165</td>
-                    <td>73</td>
-                    <td>1:55:05</td>
-                    <td>4</td>
-                    <td>4</td>
-                    <td>100.00%</td>
+                <tr style="font-weight: bold;">
+                    <td>Total</td>
+                    <td>317</td>
+                    <td>147</td>
+                    <td>3:28:00</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>108.33%</td>
                 </tr>
             </tbody>
         </table>
@@ -191,16 +207,16 @@
             dialsChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Mehwish', 'Maryam'],
+                    labels: ['Maryam', 'Mehwish'],
                     datasets: [
                         {
                             label: 'Dials',
-                            data: [116, 165],
+                            data: [201, 116],
                             backgroundColor: '#FF4500',
                         },
                         {
                             label: 'Connected',
-                            data: [64, 73],
+                            data: [83, 64],
                             backgroundColor: '#1E90FF',
                         }
                     ]
@@ -272,16 +288,16 @@
             successChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Mehwish', 'Maryam'],
+                    labels: ['Maryam', 'Mehwish'],
                     datasets: [
                         {
                             label: 'Appointments',
-                            data: [5, 4],
+                            data: [7, 5],
                             backgroundColor: '#1E90FF',
                         },
                         {
                             label: 'Showups',
-                            data: [4, 4],
+                            data: [7, 6],
                             backgroundColor: '#FF6347',
                         }
                     ]
